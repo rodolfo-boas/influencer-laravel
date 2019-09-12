@@ -1,0 +1,83 @@
+.bg-content {
+    background-color: purple;
+}
+
+.cadastro{
+    color: #fff;
+    padding-right: 10px;
+}
+
+.sobre-borda{
+    padding-right: 0;
+}
+
+.borda{
+    border-right: 1px solid #fff;
+}
+
+
+.login{
+    padding-top: 20px;
+    color: #fff;
+}
+
+.login-button button{
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 4px 80px;
+    border-radius: 50px;
+    font-size: 1em;
+    outline: none;
+    margin-bottom: 20px;
+    font-weight: lighter;
+    color: black;
+    font-family: 'Lobster', cursive;
+}
+
+.cadastro-button a{
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 4px 45px;
+    border-radius: 50px;
+    font-size: 1em;
+    outline: none;
+    margin-bottom: 20px;
+    font-weight: lighter;
+    color: black;
+    font-family: 'Lobster', cursive;
+}
+
+/* // Dispositivos extra small (telefones em modo retrato, com menos de 576px) */
+@media (max-width: 575.98px) { 
+    .borda{
+        border: none;
+    }
+
+    .sobre-borda{
+        padding-top: 20px;
+        border-top: 1px solid #fff;
+    }
+
+ }
+
+/* // Dispositivos small (telefones em modo paisagem, com 576px ou mais) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+ }
+
+/* // Dispositivos médios (tablets com 768px ou mais) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+ }
+
+/* // Dispositivos large (desktops com 992px ou mais) */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+ }
+
+/* // Dispositivos extra large (desktops grandes com 1200px ou mais) */
+@media (min-width: 1200px) { 
+
+ }
