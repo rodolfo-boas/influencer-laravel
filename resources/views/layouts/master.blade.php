@@ -43,7 +43,7 @@
             <a class="nav-link" href="contato">Contato</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login">Login</a>
+            <a class="nav-link" data-toggle="modal" data-target=".bd-login-modal-lg">Login</a>
           </li>
         </ul>
       </div>
@@ -51,7 +51,8 @@
 </header>
 
 <main>
-    @yield('content')
+    @yield('content');
+    @yield('modalCadastro');
 </main>
 
     <!-- Footer -->

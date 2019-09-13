@@ -127,7 +127,7 @@ section article #btn-content{
 }
 
 section article .btn-marca{
-    background-color: mediumorchid;
+    background-color: yellow;
     border: none;
     padding: 4px 38px;
     border-radius: 50px;
@@ -150,13 +150,13 @@ section article .btn-influencer:hover{
 }
 
 section article .btn-marca h3{
-    font-size: 0.7em;
+    font-size: 1em;
     font-weight: lighter;
-    color: white;
+    color: purple;
     font-family: helvetica;
     text-align: center;
     padding: 6px 0 0 0;
-    font-family: 'Lobster', cursive;
+    font-family: 'arial', cursive;
 }
 
 section article .btn-influencer h3{

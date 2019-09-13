@@ -4,6 +4,7 @@
 
 .cadastro{
     color: #fff;
+    padding-top: 20px;
     padding-right: 10px;
 }
 
@@ -15,11 +16,24 @@
     border-right: 1px solid #fff;
 }
 
+.btn-marca{
+    background-color: yellow;
+    border: none;
+    color: purple;
+    padding: 4px 38px;
+    border-radius: 50px;
+    margin-right: 5%;
+}
 
 .login{
+    color: #fff;
+}
+
+.login2{
     padding-top: 20px;
     color: #fff;
 }
+
 
 .login-button button{
     background-color: yellow;
