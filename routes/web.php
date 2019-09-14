@@ -42,4 +42,7 @@ Route::get('/cadastroinfluencer', function(){
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Rotas que apenas usuários logados acessam
+Route::middleware(['auth'])->group(function (){
+    Route::get('/home', 'HomeController@index')->name('home');
+});

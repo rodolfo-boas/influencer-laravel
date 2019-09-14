@@ -16,13 +16,27 @@ class UserTableSeeder extends Seeder
             'nome'=> 'juliano',
             'sobrenome'=> 'juliano',
             'email'=> 'juliano@gmail.com',
-            'password'=> 'juliano',
+            'password'=> bcrypt('juliano'),
             'CPF'=> 'juliano',
             'CNPJ'=> 'juliano',
             'URL'=> 'juliano',
             'estado'=> 'juliano',
             'genero'=> 'juliano',
             'tipo_cliente'=> 1,
+            'id_categoria'=> 1
+        ]);
+
+        User::create([
+            'nome'=> 'arthur',
+            'sobrenome'=> 'arthur',
+            'email'=> 'arthur@gmail.com',
+            'password'=> bcrypt('arthur'),
+            'CPF'=> 'arthur',
+            'CNPJ'=> 'arthur',
+            'URL'=> 'arthur',
+            'estado'=> 'arthur',
+            'genero'=> 'arthur',
+            'tipo_cliente'=> 0,
             'id_categoria'=> 1
         ]);
     }
