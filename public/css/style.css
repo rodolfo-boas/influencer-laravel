@@ -103,7 +103,9 @@ p {
 
     /* ================================================ Banner Início ======================================= */
 
-section #bg-content {
+
+
+    section #bg-content {
     background-color: purple;
 }
 
@@ -402,8 +404,26 @@ article div h4{
 
     /* Dispositivos small (telefones em modo paisagem, com 359px ou mais) */
 
-    @media (min-width: 359px)  {
+    @media (min-width: 359px) and (max-width: 413.98px) {
 
+        /* Header */
+ 
+         nav ul.navbar-nav {
+             margin: 0px auto;
+         }
+         
+         nav ul li a{
+             margin: 0px auto;
+             width: 100%;
+             /* margin-left:60px; */
+             padding: 10px 30px;
+             text-decoration: none;
+             font-size: 18px;
+             color: rgba(255, 255, 255, 0.8);
+             border-radius: 50px;
+             text-align: center;
+             transition-duration: 0.25s;
+         }
         /* Banner */
 
         section article .main-text{
@@ -463,6 +483,24 @@ article div h4{
 
     @media (min-width: 414px) and (max-width: 767.98px) { 
 
+        /* Header */
+
+        nav ul.navbar-nav {
+            margin: 0px auto;
+        }
+        
+        nav ul li a{
+            margin: 0px auto;
+            width: 100%;
+            /* margin-left:60px; */
+            padding: 10px 30px;
+            text-decoration: none;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            border-radius: 50px;
+            text-align: center;
+            transition-duration: 0.25s;
+        }
         /* Banner */
 
         section article h1 {
@@ -538,8 +576,26 @@ article div h4{
 
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 768px) and (max-width: 991.98px) {
 
+        /* Header */
+ 
+         nav ul.navbar-nav {
+             margin: 0px auto;
+         }
+         
+         nav ul li a{
+             margin: 0px auto;
+             width: 100%;
+             padding: 10px 30px;
+             text-decoration: none;
+             font-size: 18px;
+             color: rgba(255, 255, 255, 0.8);
+             border-radius: 50px;
+             text-align: center;
+             transition-duration: 0.25s;
+         }
+ 
         /* Banner */
 
         section article h1 {
@@ -705,7 +761,7 @@ article div h4{
 
     }
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1200px){
 
         /* Banner */
 
@@ -715,7 +771,7 @@ article div h4{
         }
 
         .imagem-principal {
-            max-width: 100%;
+            max-width: 80%;
         }
 
         section article h1 {
