@@ -28,7 +28,7 @@ class CreateUsersTable extends Migration
             $table->string('genero');
             $table->string('tipo_cliente');
             $table->unsignedBiginteger('id_categoria');
-            $table->foreign('id_categoria')->references('id')->on(''); 
+            // $table->foreign('id_categoria')->references('id')->on('categorias'); 
             $table->timestamps();
         });
     }

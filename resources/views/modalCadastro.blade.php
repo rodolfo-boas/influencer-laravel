@@ -5,12 +5,12 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content bg-content">
 
-                <div class="modal-header">
-                        <h5 class="modal-title text-center login" id="">Cadastre-se</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
+            <div class="modal-header">
+                <h5 class="modal-title text-center login" id="">Cadastre-se</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
 
             <section class="container-fluid h-100">
                 <div class="row h-100 d-flex">
@@ -130,7 +130,8 @@
                                     <div class="col-md-6">
                                         <input id="email" type="email"
                                             class="form-control @error('email') is-invalid @enderror" name="email"
-                                            value="{{ old('email') }}" placeholder="Digite seu e-mail" required autocomplete="email" autofocus>
+                                            value="{{ old('email') }}" placeholder="Digite seu e-mail" required
+                                            autocomplete="email" autofocus>
 
                                         @error('email')
                                         <span class="invalid-feedback" role="alert">
@@ -146,8 +147,8 @@
 
                                     <div class="col-md-6">
                                         <input id="password" type="password"
-                                            class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Digite sua senha"
-                                            required autocomplete="current-password">
+                                            class="form-control @error('password') is-invalid @enderror" name="password"
+                                            placeholder="Digite sua senha" required autocomplete="current-password">
 
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
