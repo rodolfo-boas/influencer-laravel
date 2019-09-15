@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@extends('modalCadastro')
+@extends('modais')
 
 @section('content')
 
@@ -12,7 +12,7 @@
                 e alcance o seu público alvo</p>
             <div id="btn-content">
 
-                <a class="btn btn-lg btn-marca" data-toggle="modal" data-target=".bd-cliente-modal-lg">
+                <a class="btn btn-lg btn-marca" data-toggle="modal" data-target=".bd-cadastro-modal-lg">
                     <h3>CADASTRE-SE</h3>
                 </a>
                 {{-- <a class="btn btn-lg btn-influencer" data-toggle="modal" data-target=".bd-influencer-modal-lg">
@@ -82,7 +82,7 @@
                     <h2>Personalize sua campanha</h2>
                     <p class="m-0">Faça sua campanha sazonal, lançamento de novas coleções e muito mais valer a pena!
                         Personalize
-                        sua campanha da forma que você quiser e de acordo com sues objetivos.</p>
+                        sua campanha da forma que você quiser e de acordo com seus objetivos.</p>
                 </div>
             </div>
             <div class="row align-items-center">

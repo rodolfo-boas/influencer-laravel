@@ -22,7 +22,7 @@ class UserTableSeeder extends Seeder
             'URL'=> 'juliano',
             'estado'=> 'juliano',
             'genero'=> 'juliano',
-            'tipo_cliente'=> 1,
+            'tipo_cliente'=> 'influencer',
             'id_categoria'=> 1
         ]);
 
@@ -36,7 +36,7 @@ class UserTableSeeder extends Seeder
             'URL'=> 'arthur',
             'estado'=> 'arthur',
             'genero'=> 'arthur',
-            'tipo_cliente'=> 0,
+            'tipo_cliente'=> 'marca',
             'id_categoria'=> 1
         ]);
     }

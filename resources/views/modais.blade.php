@@ -1,6 +1,8 @@
-@section('modalCadastro')
+@section('modais')
 
-<div class="modal fade bd-cliente-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+
+{{-- Modal de cadastro --}}
+<div class="modal fade bd-cadastro-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content bg-content">
@@ -48,7 +50,7 @@
         </div>
     </div>
 </div>
-{{-- Modal de Incluencer --}}
+{{-- Modal de Incluencer
 <div class="modal fade bd-influencer-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -98,8 +100,10 @@
 
         </div>
     </div>
-</div>
+</div> --}}
 
+
+{{-- Modal de login --}}
 <div class="modal fade bd-login-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
     aria-hidden="true">
     <div class="modal-dialog ">

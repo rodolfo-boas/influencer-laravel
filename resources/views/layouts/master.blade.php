@@ -28,135 +28,144 @@
     <script defer src="{{url('js/app.js')}}"></script>
 </head>
 
-@guest
-    <header>
-        <nav class=" navNova navbar navbar-expand-lg navbar-light bg-light">
-            <a class="marca navbar-brand" href="/">REACH ME OUT NL<span class="dot-color">.</span></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+{{-- Inicio da validação do Header --}}
 
-            <div class="justify-content-between collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class=" navDireita navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="marcas">Marcas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="influenciadores">Influenciadores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contato">Contato</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target=".bd-login-modal-lg">Login</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+@guest {{-- Não logado / Usuário geral --}}
+<header>
+    <nav class=" navNova navbar navbar-expand-lg navbar-light bg-light">
+        <a class="marca navbar-brand" href="/">REACH ME OUT NL<span class="dot-color">.</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="justify-content-between collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navDireita navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="marcas">Marcas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="influenciadores">Influenciadores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contato">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target=".bd-login-modal-lg">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
 @endguest
-@auth
-    @if(Auth::user()->tipo_cliente == 1)
-        <header>
-            <nav class=" navNova navbar navbar-expand-lg navbar-light bg-light">
-                <a class="marca navbar-brand" href="/">REACH ME OUT TC1<span class="dot-color">.</span></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+{{-- Fim do Não Logado / Usuário Geral --}}
 
-                <div class="justify-content-between collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class=" navDireita navbar-nav ml-auto">
-                        <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="marcas">Marcas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="influenciadores">Influenciadores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contato">Contato</a>
-                        </li>
-                        
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->nome }} <span class="caret"></span>
-                            </a>
+@auth {{-- Inicio da validação de tipo de cliente --}}
+@if(Auth::user()->tipo_cliente == 'influencer') {{-- Cliente Influencer logado --}}
+<header>
+    <nav class=" navNova navbar navbar-expand-lg navbar-light bg-light">
+        <a class="marca navbar-brand" href="/">REACH ME OUT TC1<span class="dot-color">.</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
+        <div class="justify-content-between collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navDireita navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="marcas">Marcas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="influenciadores">Influenciadores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contato">Contato</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->nome }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
+                            {{ __('Logout') }}
+                        </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-    @else
-        <header>
-            <nav class=" navNova navbar navbar-expand-lg navbar-light bg-light">
-                <a class="marca navbar-brand" href="/">REACH ME OUT TC2<span class="dot-color">.</span></a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+{{-- Fim do Header do cliente Influencer --}}
 
-                <div class="justify-content-between collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class=" navDireita navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="marcas">Marcas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="influenciadores">Influenciadores</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contato">Contato</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->nome }} <span class="caret"></span>
-                            </a>
+@elseif(Auth::user()->tipo_cliente == 'marca') {{-- Inicio do header do cliente Marca --}}
+<header>
+    <nav class=" navNova navbar navbar-expand-lg navbar-light bg-light">
+        <a class="marca navbar-brand" href="/">REACH ME OUT TC2<span class="dot-color">.</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
+        <div class="justify-content-between collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class=" navDireita navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="marcas">Marcas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="influenciadores">Influenciadores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contato">Contato</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->nome }} <span class="caret"></span>
+                    </a>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
+                            {{ __('Logout') }}
+                        </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-    @endif
-@endauth
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+@endif
+{{-- Fim do Header do cliente marca --}}
+
+@endauth{{-- Fim da validação de tipo de cliente --}}
+
 <main>
-    @yield('content');
-    @yield('modalCadastro');
+    @yield('content')
+    @yield('modais')
 </main>
 
-<!-- Footer -->
+{{-- Inicio do Footer --}}
 <footer class="page-footer font-small pt-2">
 
     <!-- Footer Elements -->
@@ -172,8 +181,8 @@
             <li class="list-inline-item">
                 <a class="btn-floating btn-tw mx-1">
                     <i class="fab fa-twitter-square"> </i>
-                </a>
-            </li>
+                </a><!-- Footer -->
+            </li><!-- Footer -->
             <li class="list-inline-item">
                 <a class="btn-floating btn-gplus mx-1">
                     <i class="fab fa-google-plus-square"> </i>
@@ -206,3 +215,4 @@
         </div>
 
 </footer>
+{{-- Fim do Footer --}}
