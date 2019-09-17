@@ -31,11 +31,11 @@ Route::get('/marcas', function(){
     return view('marcas');
 });
 
-Route::get('/cadastrocliente', function(){
-    return view('cadastroCliente');
+Route::get('/cadastro/marca', function(){
+    return view('cadastroMarca');
 });
 
-Route::get('/cadastroinfluencer', function(){
+Route::get('/cadastro/influencer', function(){
     return view('cadastroInfluencer');
 });
 
