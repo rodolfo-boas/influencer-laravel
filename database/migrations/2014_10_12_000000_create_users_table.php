@@ -16,18 +16,19 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nome');
-            $table->string('sobrenome');
-            $table->string('email')->unique();
+            $table->string('sobrenome')->nullable();
+            $table->string('contato', 11)->nullable();
+            $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->string('CPF', 11)->unique();
-            $table->string('CNPJ', 14)->unique();
-            $table->string('URL');
-            $table->string('estado');
-            $table->string('genero');
-            $table->string('tipo_cliente');
-            $table->unsignedBiginteger('id_categoria');
+            $table->string('CPF', 11)->unique()->nullable();
+            $table->string('CNPJ', 14)->unique()->nullable();
+            $table->string('URL')->nullable();
+            $table->string('estado')->unique()->nullable();
+            $table->string('genero')->unique()->nullable();
+            $table->string('tipo_cliente')->nullable();
+            $table->unsignedBiginteger('id_categoria')->unique()->nullable();
             // $table->foreign('id_categoria')->references('id')->on('categorias'); 
             $table->timestamps();
         });

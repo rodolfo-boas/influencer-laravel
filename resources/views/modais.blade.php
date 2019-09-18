@@ -24,7 +24,7 @@
                                 <h4 class="text-center">Cadastro Marca</h4>
                                 <p class="text-center">Se não possui conta, clique no botão abaixo</p>
                                 <div class="cadastro-button d-flex justify-content-center">
-                                    <a class="btn btn-lg btn-influencer" href="cadastrocliente">quero me cadastrar</a>
+                                    <a class="btn btn-lg btn-influencer" href="cadastro/marca">quero me cadastrar</a>
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@
                                 <h4 class="text-center">Cadastro influencer</h4>
                                 <p class="text-center">Se não possui conta, clique no botão abaixo</p>
                                 <div class="cadastro-button d-flex justify-content-center">
-                                    <a class="btn btn-lg btn-influencer" href="cadastrocliente">quero me cadastrar</a>
+                                    <a class="btn btn-lg btn-influencer" href="cadastro/influencer">quero me cadastrar</a>
                                 </div>
                             </div>
                         </div>

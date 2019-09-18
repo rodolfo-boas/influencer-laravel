@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/galeria.css">
     <link rel="icon" type="imagem/png" href="assets/ico/r.png" />
     <title>@yield('title')</title>
     <link rel="stylesheet" href="{{url('css/app.css')}}">
@@ -25,6 +26,7 @@
     <link rel="stylesheet" href="{{url('css/contato.css')}}">
     <link rel="stylesheet" href="{{url('css/login.css')}}">
     <link rel="stylesheet" href="{{url('css/landing.css')}}">
+    <link rel="stylesheet" href="{{url('css/galeria.css')}}">
     <script defer src="{{url('js/app.js')}}"></script>
 </head>
 
@@ -66,93 +68,53 @@
 @auth {{-- Inicio da validação de tipo de cliente --}}
 @if(Auth::user()->tipo_cliente == 'influencer') {{-- Cliente Influencer logado --}}
 <header>
-    <nav class=" navNova navbar navbar-expand-lg navbar-light bg-light">
-        <a class="marca navbar-brand" href="/">REACH ME OUT TC1<span class="dot-color">.</span></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-md navbar-light align-items-center m-0 text-white">
+        <p class="col-8 col-md-4 m-0">
+            Olá {{ Auth::user()->nome }}</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navInterna" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="justify-content-between collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class=" navDireita navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="marcas">Marcas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="influenciadores">Influenciadores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contato">Contato</a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->nome }} <span class="caret"></span>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        
+        <section class="collapse navbar-collapse col-md-8" id="navInterna">
+        <ul class="navbar-nav text-center">
+            <li><a class="" href="">Mensagens</a></li>
+            <li><a class="" href="">Suporte</a></li>
+            <li><a class="" href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+            </form></li>
+        </ul>
+        </section>
     </nav>
 </header>
+
+
 {{-- Fim do Header do cliente Influencer --}}
 
 @elseif(Auth::user()->tipo_cliente == 'marca') {{-- Inicio do header do cliente Marca --}}
-<header>
-    <nav class=" navNova navbar navbar-expand-lg navbar-light bg-light">
-        <a class="marca navbar-brand" href="/">REACH ME OUT TC2<span class="dot-color">.</span></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+ <!-- MENU DE NAVEGAÇÃO -->
+ <header>
+    <nav class="navbar navbar-expand-md navbar-light align-items-center m-0 text-white">
+        <p class="col-8 col-md-4 m-0">
+            Olá {{ Auth::user()->nome }}</p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navInterna" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="justify-content-between collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class=" navDireita navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="marcas">Marcas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="influenciadores">Influenciadores</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contato">Contato</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->nome }} <span class="caret"></span>
-                    </a>
-
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        
+        <section class="collapse navbar-collapse col-md-8" id="navInterna">
+        <ul class="navbar-nav text-center">
+            <li><a href="">Mensagens</i></a></li>
+            <li><a href="">Suporte</a></li>
+            <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+            </form></li>
+        </ul>
+        </section>
     </nav>
 </header>
 @endif

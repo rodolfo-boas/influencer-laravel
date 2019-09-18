@@ -1,0 +1,150 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+  font-size: 18px;
+}
+
+/* Navegação Interna Início */
+
+header{
+  background: purple;
+}
+
+header nav p {
+  font-size: 0.9em;
+}
+
+section ul{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+section ul li {
+  font-size: 1em;
+}
+
+section ul li a {
+  color: white;
+}
+
+section ul li a:hover {
+  color: yellow;
+}
+
+nav ul li:nth-child(3n) a {
+  background-color: purple;
+}
+
+nav ul li:nth-child(2n) a {
+  background-color: purple;
+}
+
+nav ul li:nth-child(1n) a {
+  background-color: purple;
+}
+
+/* Navegação Interna Fim */
+
+.container-fluid h1 {
+  padding-top: 20px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.filtro-content{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: left;
+  background-color: rgba(223, 217, 217, 0.363);
+  padding: 20px;
+}
+
+.filtro-content ul{
+  font-size: 1em;
+  text-align: left;
+  color: purple;
+}
+
+.filtro-content ul li{
+  list-style: none;
+  text-align: left;
+}
+
+.filtro-content ul li a{
+  color: black;
+  font-size: 0.8em;
+  text-decoration: none;
+}
+
+.filtro-content ul li a:hover {
+  color: purple;
+  font-weight: bold;
+}
+
+/* Galeria Interna Início */
+
+.flip-container {
+	perspective: 1000;
+}
+
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+}
+
+.flipper {
+	transition: 0.5s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+.flip-card-back {
+    background-color: purple;
+    color: white;
+    transform: rotateY(180deg);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .flip-card-front, .flip-card-back {
+  backface-visibility: hidden;
+	top: 0;
+	left: 0;
+  }
+  
+  .text-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+  }
+
+  .name-content{
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+
+  .button-content{
+    border-radius: 50px;
+    border: none;
+    font-size: 0.8em;
+    background-color: purple;
+    color: white;
+    padding: 8px;
+  }
+
+  /* Galeria Interna Fim */
+
+  /* Modal Influencer Início */
+
+  .modal-influencer{
+    height: 500px;
+  }
