@@ -77,9 +77,9 @@
         
         <section class="collapse navbar-collapse col-md-8" id="navInterna">
         <ul class="navbar-nav text-center">
-            <li><a class="" href="">Mensagens</a></li>
-            <li><a class="" href="">Suporte</a></li>
-            <li><a class="" href="{{ route('logout') }}" onclick="event.preventDefault();
+            <li><a class="menuLogado" href="">Mensagens</a></li>
+            <li><a class="menuLogado" href="">Suporte</a></li>
+            <li><a class="menuLogado" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -105,9 +105,9 @@
         
         <section class="collapse navbar-collapse col-md-8" id="navInterna">
         <ul class="navbar-nav text-center">
-            <li><a href="">Mensagens</i></a></li>
-            <li><a href="">Suporte</a></li>
-            <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
+            <li><a class="menuLogado" href="">Mensagens</i></a></li>
+            <li><a class="menuLogado" href="">Suporte</a></li>
+            <li><a class="menuLogado" href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
