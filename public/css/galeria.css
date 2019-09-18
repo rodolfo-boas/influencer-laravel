@@ -36,17 +36,17 @@ section ul li a:hover {
   color: yellow;
 }
 
-nav ul li:nth-child(3n) a {
+nav ul li a.menuLogado  {
   background-color: purple;
 }
 
-nav ul li:nth-child(2n) a {
+/* nav ul li:nth-child(2n) a {
   background-color: purple;
 }
 
 nav ul li:nth-child(1n) a {
   background-color: purple;
-}
+} */
 
 /* Navegação Interna Fim */
 
