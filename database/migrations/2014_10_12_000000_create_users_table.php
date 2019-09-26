@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Symfony\Component\Console\Helper\Table;
 
 class CreateUsersTable extends Migration
 {
@@ -19,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('sobrenome')->nullable();
             $table->string('contato', 11)->nullable();
             $table->string('email')->unique()->nullable();
+            $table->string('seguidores')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

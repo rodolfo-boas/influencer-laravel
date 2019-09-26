@@ -10,12 +10,10 @@
                 <div class="row">
                     <div class="col-10 offset-1 col-md-6 offset-md-3">
                         <div class="cadastro-info">
-                            <h2 class="cadastro-info cadastro-title text-center">Bem vindo!</h2>
-                            <h2 class="cadastro-info cadastro-title text-center">Ja registrou sua marca, Vamos realizar
-                                seu cadastro?
-                            </h2>
-                            <h2 class="cadastro-info cadastro-title text-center">Dados pessoais</h2>
-                            <p class="cadastro-info cadastro-obrigatorio text-center">Os campos marcados com * são de
+                            <h2 class="cadastro-info cadastro-title text-center">Fala Serio, voce ainda nâo é cadastrado?</h2>
+                            <h2 class="cadastro-info cadastro-title text-center">Ta esperando o que? Corre pra preencher esses dados!</h2>
+                            {{-- <h2 class="cadastro-info cadastro-title text-center">Dados pessoais</h2> --}}
+                            <p class="cadastro-info cadastro-obrigatorio text-center">Só não esquece, os campos marcados com * são de
                                 preenchimento obrigatório</p>
                         </div>
                     </div>
@@ -33,7 +31,7 @@
                             <div class="col-md-6">
                                 <input id="nome" type="text" class="form-control @error('nome') is-invalid @enderror"
                                     name="name" value="{{ old('nome') }}" required autocomplete="nome" autofocus
-                                    placeholder="Qual o nome da sua empresa?">
+                                    placeholder="Vamos começar com o basico, qual o seu nome ?">
 
                                 @error('nome')
                                 <span class="invalid-feedback" role="alert">
@@ -43,14 +41,46 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="sobrenome" class="col-md-4 col-form-label text-md-right">{{ __('Sobrenome') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="sobrenome" type="text" class="form-control @error('sobrenome') is-invalid @enderror"
+                                    name="sobrenome" value="{{ old('sobrenome') }}" required autocomplete="sobrenome" autofocus
+                                    placeholder="Mas fala aí, qual seu sobrenome ?">
+
+                                @error('sobrenome')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
 
                         <div class="form-group row">
-                            <label for="cnpj" class="col-md-4 col-form-label text-md-right">{{ __('CNPJ') }}</label>
+                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="cpf" type="text" class="form-control @error('cpf') is-invalid @enderror"
+                                    name="cpf" value="{{ old('cpf') }}" required autocomplete="cpf" autofocus
+                                    placeholder="qual seu CPF? mera formalidade JURO!">
+
+                                @error('cpf')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="cnpj" class="col-md-4 col-form-label text-md-right">{{ __('cnpj') }}</label>
 
                             <div class="col-md-6">
                                 <input id="cnpj" type="text" class="form-control @error('cnpj') is-invalid @enderror"
                                     name="cnpj" value="{{ old('cnpj') }}" required autocomplete="cnpj" autofocus
-                                    placeholder="Informe o CNPJ da sua empresa?">
+                                    placeholder="qual seu cnpj? mera formalidade JURO!">
 
                                 @error('cnpj')
                                 <span class="invalid-feedback" role="alert">
@@ -67,7 +97,7 @@
                                 <input id="contato" type="text"
                                     class="form-control @error('contato') is-invalid @enderror" name="contato"
                                     value="{{ old('contato') }}" required autocomplete="contato" autofocus
-                                    placeholder="Informe um numero de contato da sua empresa?">
+                                    placeholder="Que tal me passar seu contato?">
 
                                 @error('contato')
                                 <span class="invalid-feedback" role="alert">
@@ -80,12 +110,44 @@
 
 
                         <div class="form-group row">
+                            <label for="url" class="col-md-4 col-form-label text-md-right">{{ __('URL') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="url" type="text" class="form-control @error('url') is-invalid @enderror"
+                                    name="url" value="{{ old('url') }}" required autocomplete="url"
+                                    placeholder="Cola aqui seu link no Insta!">
+
+                                @error('url')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="seguidores" class="col-md-4 col-form-label text-md-right">{{ __('Seguidores') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="seguidores" type="text" class="form-control @error('seguidores') is-invalid @enderror"
+                                    name="seguidores" value="{{ old('seguidores') }}" required autocomplete="seguidores"
+                                    placeholder="A pergunta que não quer calar, quantos são?">
+
+                                @error('seguidores')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
                                     name="email" value="{{ old('email') }}" required autocomplete="email"
-                                    placeholder="Digite o email de contato da empresa">
+                                    placeholder="Quase no fim, digite o seu email de contato ?">
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -103,7 +165,7 @@
                                 <input id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password"
                                     required autocomplete="new-password"
-                                    placeholder="Digite uma senha com no minimo 8 digitos">
+                                    placeholder="Capricha na senha com (minimo 8 digitos)">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -120,11 +182,11 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control"
                                     name="password_confirmation" required autocomplete="new-password"
-                                    placeholder="Digite a mesma senha para confirmação">
+                                    placeholder="So para ter certeza, shshsh.">
                             </div>
                         </div>
 
-                        <input type="hidden" name="tipo_cliente" value ='marca'>
+                        <input type="hidden" name="tipo_cliente" value ='influencer'>
 
                         <div class="form-group">
                             <div class="cadastro-button d-flex justify-content-center">
