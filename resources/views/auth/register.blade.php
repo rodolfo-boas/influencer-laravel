@@ -75,22 +75,6 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="cnpj" class="col-md-4 col-form-label text-md-right">{{ __('cnpj') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="cnpj" type="text" class="form-control @error('cnpj') is-invalid @enderror"
-                                    name="cnpj" value="{{ old('cnpj') }}" required autocomplete="cnpj" autofocus
-                                    placeholder="qual seu cnpj? mera formalidade JURO!">
-
-                                @error('cnpj')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
                             <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('Contato') }}</label>
 
                             <div class="col-md-6">
