@@ -51,8 +51,8 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['string', 'max:255'],
             'sobrenome' => ['string', 'max:255'],
-            'cpf' => ['string', 'min:11'],
-            'cnpj' => ['string', 'min:14'],
+            'cpf' => ['string', 'min:11', 'unique:users'],
+            'cnpj' => ['string', 'min:14', 'unique:users'],
             'url' => ['string', 'max:255'],
             'contato' =>['string', 'min:11' ],
             'seguidores' => ['string', 'max:255'],
