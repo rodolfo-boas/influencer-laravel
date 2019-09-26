@@ -70,18 +70,30 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
-        return User::create([
-            'nome' => $data['name'],
-            'sobrenome'=> $data['sobrenome'],
-            'cpf'=> $data['cpf'],
-            'url'=> $data['url'],
-            'seguidores'=> $data['seguidores'],
-            'cnpj' => $data['cnpj'],
-            'contato'=>$data['contato'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'tipo_cliente'=>$data['tipo_cliente'],
-        ]);
+    {   
+        if ($data['tipo_cliente'] == 'influencer' ) {
+
+            return User::create([
+                'nome' => $data['name'],
+                'sobrenome'=> $data['sobrenome'],
+                'cpf'=> $data['cpf'],
+                'url'=> $data['url'],
+                'seguidores'=> $data['seguidores'],
+                'contato'=>$data['contato'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'tipo_cliente'=>$data['tipo_cliente'],
+            ]);
+        } else if ($data['tipo_cliente'] == 'marca' ) {
+            
+            return User::create([
+                'nome' => $data['name'],
+                'cnpj' => $data['cnpj'],
+                'contato'=>$data['contato'],
+                'email' => $data['email'],
+                'password' => Hash::make($data['password']),
+                'tipo_cliente'=>$data['tipo_cliente'],
+            ]);
+        }
     }
 }
