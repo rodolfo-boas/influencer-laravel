@@ -226,7 +226,7 @@
                                     <img class="img-fluid" src="image/campanha.jpg" alt="">
                                 </div>
                                 <div class="col-6">
-                                    <form method="POST" action="" enctype="multipart/form-data">
+                                    <form method="POST" action="/campanha/adicionar" enctype="multipart/form-data">
                                         @csrf
                                         {{method_field('post')}}
                                         <div class="form-group">
