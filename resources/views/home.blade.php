@@ -217,23 +217,53 @@
 
 <!-- Modal influencer -->
 
-<div class=" modal fade modalInfo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content modal-influencer">
-        <section class="d-flex flex-row align-items-center justify-content-center">
-                <div class="col-6">
-                    <img class="img-fluid" src="image/campanha.jpg" alt="">
-                </div>
-                <div class="col-6">
-                    <span>Título: </span>
-                    <hr>
-                    <span>Descrição: </span>
-                    <hr>
-                    <span>Data de Início: </span>
-                    <hr>
-                    <span>Data de Término: </span>
-                    <hr>
-                </div>
+
+                <div class=" modal fade modalInfo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content modal-influencer">
+                        <section class="d-flex flex-row align-items-center justify-content-center">
+                                <div class="col-6">
+                                    <img class="img-fluid" src="image/campanha.jpg" alt="">
+                                </div>
+                                <div class="col-6">
+                                    <form method="POST" action="" enctype="multipart/form-data">
+                                        @csrf
+                                        {{method_field('post')}}
+                                        <div class="form-group">
+                                            <label for="titulo">Título da Campanha</label>
+                                            <input type="text" name="titulo" class="form-control" id="titulo">
+                                        </div>
+                                
+                                        <div class="form-group">
+                                            <label for="descricao">descricao</label>
+                                            <input type="text" name="descricao" class="form-control" id="descricao">
+                                        </div>
+                                
+                                        <div class="form-group">
+                                            <label for="imagem">Imagem</label>
+                                            <input type="file" name="imagem" class="form-control" id="imagem">
+                                        </div>
+                                
+                                        <div class="form-group">
+                                            <label for="categoria">categoria</label>
+                                            <input type="text" name="categoria" class="form-control" id="categoria">
+                                        </div>
+                                        
+                                        <div class="d-flex flex-row">
+                                        <div class="form-group">
+                                            <label for="inicio"> Data de Inicio</label>
+                                            <input type="date" name="inicio" class="form-control col-10" id="inicio">
+                                        </div>
+                                
+                                        <div class="form-group">
+                                            <label for="fim"> Data de fim</label>
+                                            <input type="date" name="fim" class="form-control col-10" id="fim">
+                                        </div>
+                                                    <div class="form-group">
+                <button type="submit" class="form-control btn btn-primary">Enviar</button>
+            </div>
+        </div>
+    </div>
             </section>
         </div>
     </div>
