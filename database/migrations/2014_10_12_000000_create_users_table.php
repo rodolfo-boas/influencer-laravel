@@ -30,7 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('estado')->unique()->nullable();
             $table->string('genero')->unique()->nullable();
             $table->string('tipo_cliente')->nullable();
-            $table->unsignedBiginteger('id_categoria')->unique()->nullable();
+            $table->unsignedBiginteger('id_categoria')->nullable();
             // $table->foreign('id_categoria')->references('id')->on('categorias'); 
             $table->timestamps();
         });
