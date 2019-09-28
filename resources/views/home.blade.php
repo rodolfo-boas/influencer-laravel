@@ -208,14 +208,14 @@
                     </div>
                     </div>
                     <h2 class="name-content">{{ Auth::user()->nome }}</h2>
-                    <button class="mb-5 button-content" type="button" data-toggle="modal" data-target=".modalInfo">Modal Info</button>
+                    <button  class="mb-5 button-content" type="button" data-toggle="modal" data-target=".modalInfo">Modal Info</button>
                 </div>
             </figure>            
         </div>
     </div>
 </div>
 
-<!-- Modal influencer -->
+<!-- Modal marca -->
 
 
                 <div class=" modal fade modalInfo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -246,7 +246,12 @@
                                 
                                         <div class="form-group">
                                             <label for="categoria">categoria</label>
-                                            <input type="text" name="categoria" class="form-control" id="categoria">
+                                            <select name="categoria" class="form-control" id="categoria">
+                                                <option value="">Selecione a categoria</option>
+                                                @foreach ($categorias as $categoria)
+                                                <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                         
                                         <div class="d-flex flex-row">

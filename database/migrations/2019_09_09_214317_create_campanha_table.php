@@ -18,7 +18,7 @@ class CreateCampanhaTable extends Migration
             $table->string('titulo');
             $table->string('descricao');
             $table->string('imagem');
-            $table->string('categoria');
+            $table->unsignedBigInteger('id_categoria');
             $table->date('inicio');
             $table->date('fim');
             $table->timestamps();

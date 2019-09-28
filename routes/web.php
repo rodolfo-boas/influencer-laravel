@@ -40,7 +40,7 @@ Route::get('/cadastro/influencer', function(){
 });
 
 // Adicionar campanha
-Route::get('/campanha/adicionar', 'campanhaController@adicionandocampanha')->name('campanha-adicionar');
+Route::get('/campanha/adicionar', 'campanhaController@adicionandoCampanha')->name('campanha-adicionar');
 Route::post('/campanha/adicionar', 'campanhaController@salvandocampanha');
 
 
