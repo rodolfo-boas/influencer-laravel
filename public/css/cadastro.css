@@ -37,6 +37,14 @@ div.cadastro-info{
     font-family: 'Lobster', cursive;
 }
 
+.primeira-frase{
+    font-size: 2em;
+}
+
+::-webkit-input-placeholder {
+    font-size: 0.8em;
+}
+
 /* // Dispositivos extra small (telefones em modo retrato, com menos de 576px) */
 @media (max-width: 575.98px) { 
 

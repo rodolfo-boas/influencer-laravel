@@ -401,6 +401,12 @@ article div h4{
 
     /* ================================================ Footer Fim ========================================== */
 
+    /* ============================================= Campanha */
+
+    .campanha-content{
+        font-size: 0.8em;
+    }
+
 
     /* Dispositivos small (telefones em modo paisagem, com 359px ou mais) */
 
