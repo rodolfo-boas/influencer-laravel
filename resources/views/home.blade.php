@@ -37,7 +37,7 @@
             </ul>
         </div>
 
-        <div class="col-10">
+        {{-- <div class="col-10">
             <figure class="col-lg-3 col-md-4 col-12 d-flex justify-content-center">
                 <div class="produto-imagem text-center">
                     <div class="flip-container">
@@ -51,12 +51,98 @@
                         </div>
                     </div>
                     </div>
-                    <h2 class="name-content">{{ Auth::user()->nome }}</h2>
-                    <button class="mb-5 button-content" type="button" data-toggle="modal" data-target=".modalInfo">Influencer</button>
+                    {{-- <h2 class="name-content">{{ Auth::user()->nome }}</h2> --}}
+                    {{-- <button class="mb-5 button-content" type="button" data-toggle="modal" data-target=".modalInfo">Influencer</button>
                     <button class="mb-5 button-content" type="button" data-toggle="modal" data-target="#modalCampanha">Criar Campanha</button>
                 </div>
             </figure>            
-        </div>
+        </div> --}}
+        
+        <section>
+            <div class="card mb-3" style="max-width: 900px;">
+                <div class="row no-gutters">
+                  <div class="col-md-5">
+                    <img src="..." class="card-img" alt="...">
+                  </div>
+                  <div class="col-md-7">
+                        <div class="card-body">
+                        <h5 class="card-title">Título</h5>
+                        <p class="card-text">Descrição Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus doloremque nihil in exercitationem voluptas optio itaque cum, dolores quasi delectus natus fuga similique fugiat non suscipit vitae ab magnam est.</p>
+                        <div class="d-flex flex-row">
+                            <div class="flex-column mr-5">
+                                <p class="card-text">Data de Inicio</small></p>
+                            </div>
+                            <div class="flex-column">
+                                <p class="card-text">Data de Fim</small></p>
+                            </div>
+                        </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </section>
+
+        {{-- <div>
+                @foreach ($campanhas as $campanha)
+                    <tr>
+                        <td scope="row">
+                            <img width="80" src="{{url($campanha->imagem)}}" alt="">
+                        </td>
+                        <td scope="row">{{$campanha->titulo}}</td>
+                        <td scope="row">{{$campanha->descricao}}</td>
+                        <td scope="row">{{$campanha->categoria->categoria}}</td>
+                        <td scope="row">{{$campanha->inicio}}</td>
+                        <td scope="row">{{$campanha->fim}}</td>
+                    </tr>
+                @endforeach
+            </div> --}}
+
+
+        {{-- Versão 2 --}}
+
+        {{-- <section class="row">
+            <article class="col-10">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Imagem</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Início</th>
+                            <th scope="col">Fim</th>
+                            <th scope="col" colspan="2">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody> --}}
+                        {{-- @foreach($campanhas as $campanha) --}}
+                        <tr>
+                            {{-- <td scope="row">
+                                <img width="80" height="80" src="{{url($campanhas->imagem)}}" alt="">
+                            </td>
+                            <td scope="row">{{$campanhas->titulo}}</td>
+                            <td scope="row">{{$campanhas->descricao}}</td>
+                            <td scope="row">{{$campanhas->inicio}}</td>
+                            <td scope="row">{{$campanhas->fim}}</td> --}}
+
+                            <td scope="row">
+                                {{-- <img width="80" height="80" src="{{url($campanhas->imagem)}}" alt=""> --}}
+                            {{-- </td>
+                            <td scope="row">Título</td>
+                            <td scope="row">Imagem</td>
+                            <td scope="row">Inicio</td>
+                            <td scope="row">Fim</td> --}}
+
+                            
+                            {{-- <td>
+                                <i class="fas fa-edit">Participar da campanha</i>
+                            </td> --}}
+                        {{-- @endforeach --}}
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
     </div>
 </div>
 
@@ -166,7 +252,7 @@
 @elseif(Auth::user()->tipo_cliente == 'marca') {{-- Conteudo da tela de trabalho da MARCA --}}
 
 <div class="container-fluid">
-    <h1 class="text-center">Campanhas</h1>
+    <h1 class="text-center">Marca</h1>
     <div class="row">
         
         <div class="col-2 filtro-content">
