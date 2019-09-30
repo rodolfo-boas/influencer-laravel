@@ -268,6 +268,7 @@
                 <button type="submit" class="form-control btn btn-primary">Enviar</button>
             </div>
         </div>
+                                    </form>
     </div>
             </section>
         </div>
