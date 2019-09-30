@@ -7,6 +7,7 @@ use App\Campanha;
 
 class CampanhaController extends Controller
 {
+
     public function salvandoCampanha(Request $request){
         $request->validate([
             "titulo" => "required|max:50",
@@ -45,9 +46,19 @@ class CampanhaController extends Controller
 
     }
 
+    
+    public function exibindoInfluencers () {
+        $categorias = Categoria::orderBy('categoria', 'ASC')->get();
+
+        return view('adicionandoCampanha')->with(['categorias' => $categorias]);
+    }
+
+
     public function adicionandoCampanha () {
         $categorias = Categoria::orderBy('categoria', 'ASC')->get();
 
         return view('adicionandoCampanha')->with(['categorias' => $categorias]);
     }
+
+
 }

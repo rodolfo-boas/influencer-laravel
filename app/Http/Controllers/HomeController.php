@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Categoria;
+use App\Campanha;
 
 class HomeController extends Controller
 {
@@ -25,6 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $categorias = Categoria::all();
-        return view('home')->with('categorias', $categorias);
+        $campanhas = Campanha::orderBy('id', 'ASC')->get();
+        return view('home')->with(['categorias' => $categorias, 'campanhas'=> $campanhas]);
     }
 }
