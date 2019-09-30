@@ -8,17 +8,14 @@
             <div class="col-md-8">
 
                 <div class="row">
-                    <div class="col-10 offset-1 col-md-6 offset-md-3">
-                        <div class="cadastro-info">
-                            <h2 class="cadastro-info cadastro-title text-center">Fala Serio, voce ainda não é cadastrado?</h2>
+                    <div class="col-12 offset-1 col-md-12">
+                        <div class="cadastro-info ">
+                            <h2 class="cadastro-info primeira-frase cadastro-title text-center">Fala Sério, voce ainda não é cadastrado?</h2>
                             <h2 class="cadastro-info cadastro-title text-center">Ta esperando o que? Corre pra preencher esses dados!</h2>
                             {{-- <h2 class="cadastro-info cadastro-title text-center">Dados pessoais</h2> --}}
-                            <p class="cadastro-info cadastro-obrigatorio text-center">Só não esquece, os campos marcados com * são de
+                            <p class="cadastro-info cadastro-obrigatorio text-center">Só não esquece: os campos marcados com * são de
                                 preenchimento obrigatório</p>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                    </div>
                 </div>
 
                 <div class="card-body">

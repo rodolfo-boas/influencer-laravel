@@ -8,15 +8,13 @@
             <div class="col-md-8">
 
                 <div class="row">
-                    <div class="col-10 offset-1 col-md-6 offset-md-3">
+                    <div class="col-12 offset-1 col-md-12">
                         <div class="cadastro-info">
-                            <h2 class="cadastro-info cadastro-title text-center">Bem vindo!</h2>
-                            <h2 class="cadastro-info cadastro-title text-center">Ja registrou sua marca, Vamos realizar
-                                seu cadastro?
-                            </h2>
-                            <h2 class="cadastro-info cadastro-title text-center">Dados pessoais</h2>
-                            <p class="cadastro-info cadastro-obrigatorio text-center">Os campos marcados com * são de
-                                preenchimento obrigatório</p>
+                            
+                            <h2 class="cadastro-info primeira-frase cadastro-title text-center">Ja registrou sua marca?</h2>
+                            <h2 class="cadastro-info cadastro-title text-center">Ta esperando o que? Corre pra preencher esses dados!
+                                </h2>
+                            <p class="cadastro-info cadastro-obrigatorio text-center">Só não esquece: os campos marcados com * são de preenchimento obrigatório</p>
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -31,7 +29,7 @@
                             <label for="nome" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
                             <div class="col-md-6">
-                                <input id="nome"type="text" class="form-control @error('nome') is-invalid @enderror"
+                                <input id="nome" type="text" class="form-control @error('nome') is-invalid @enderror"
                                     name="name" value="{{ old('nome') }}" required autocomplete="nome" autofocus
                                     placeholder="Qual o nome da sua empresa?">
 
@@ -48,7 +46,7 @@
                             <label for="cnpj" class="col-md-4 col-form-label text-md-right">{{ __('CNPJ') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cnpj"  maxlength="14" minlength="14" type="text" class="form-control @error('cnpj') is-invalid @enderror"
+                                <input id="cnpj" type="text" class="form-control @error('cnpj') is-invalid @enderror"
                                     name="cnpj" value="{{ old('cnpj') }}" required autocomplete="cnpj" autofocus
                                     placeholder="Informe o CNPJ da sua empresa?">
 
@@ -61,10 +59,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('Telefone') }}</label>
+                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('Contato') }}</label>
 
                             <div class="col-md-6">
-                                <input id="contato" maxlength="11" minlength="11" type="text"
+                                <input id="contato" type="text"
                                     class="form-control @error('contato') is-invalid @enderror" name="contato"
                                     value="{{ old('contato') }}" required autocomplete="contato" autofocus
                                     placeholder="Informe um numero de contato da sua empresa?">
