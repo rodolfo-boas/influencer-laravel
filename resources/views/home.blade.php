@@ -98,47 +98,6 @@
                 @endforeach
             </div> --}}
 
-
-        {{-- Versão 2 --}}
-
-        {{-- <section class="row">
-            <article class="col-10">
-                <table class="table">
-                    <thead class="thead-light">
-                        <tr>
-                            <th scope="col">Imagem</th>
-                            <th scope="col">Título</th>
-                            <th scope="col">Descrição</th>
-                            <th scope="col">Início</th>
-                            <th scope="col">Fim</th>
-                            <th scope="col" colspan="2">Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody> --}}
-                        {{-- @foreach($campanhas as $campanha) --}}
-                        <tr>
-                            {{-- <td scope="row">
-                                <img width="80" height="80" src="{{url($campanhas->imagem)}}" alt="">
-                            </td>
-                            <td scope="row">{{$campanhas->titulo}}</td>
-                            <td scope="row">{{$campanhas->descricao}}</td>
-                            <td scope="row">{{$campanhas->inicio}}</td>
-                            <td scope="row">{{$campanhas->fim}}</td> --}}
-
-                            <td scope="row">
-                                {{-- <img width="80" height="80" src="{{url($campanhas->imagem)}}" alt=""> --}}
-                            {{-- </td>
-                            <td scope="row">Título</td>
-                            <td scope="row">Imagem</td>
-                            <td scope="row">Inicio</td>
-                            <td scope="row">Fim</td> --}}
-
-                            
-                            {{-- <td>
-                                <i class="fas fa-edit">Participar da campanha</i>
-                            </td> --}}
-                        {{-- @endforeach --}}
-                    </tbody>
                 </table>
             </article>
         </section>
