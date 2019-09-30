@@ -229,22 +229,22 @@
                                     <form method="POST" action="/campanha/adicionar" enctype="multipart/form-data">
                                         @csrf
                                         {{method_field('post')}}
-                                        <div class="form-group">
+                                        <div class="form-group mt-3 campanha-content">
                                             <label for="titulo">Título da Campanha</label>
                                             <input type="text" name="titulo" class="form-control" id="titulo">
                                         </div>
                                 
-                                        <div class="form-group">
+                                        <div class="form-group campanha-content">
                                             <label for="descricao">descricao</label>
                                             <input type="text" name="descricao" class="form-control" id="descricao">
                                         </div>
                                 
-                                        <div class="form-group">
+                                        <div class="form-group campanha-content">
                                             <label for="imagem">Imagem</label>
                                             <input type="file" name="imagem" class="form-control" id="imagem">
                                         </div>
                                 
-                                        <div class="form-group">
+                                        <div class="form-group campanha-content">
                                             <label for="categoria">categoria</label>
                                             <select name="categoria" class="form-control" id="categoria">
                                                 <option value="">Selecione a categoria</option>
@@ -255,18 +255,18 @@
                                         </div>
                                         
                                         <div class="d-flex flex-row">
-                                        <div class="form-group">
-                                            <label for="inicio"> Data de Inicio</label>
+                                        <div class="form-group campanha-content">
+                                            <label for="inicio">Iníco da Campanha</label>
                                             <input type="date" name="inicio" class="form-control col-10" id="inicio">
                                         </div>
                                 
-                                        <div class="form-group">
-                                            <label for="fim"> Data de fim</label>
+                                        <div class="form-group campanha-content">
+                                            <label for="fim">Final da Campanha</label>
                                             <input type="date" name="fim" class="form-control col-10" id="fim">
                                         </div>
-                                                    <div class="form-group">
-                <button type="submit" class="form-control btn btn-primary">Enviar</button>
-            </div>
+                                                    <div class="form-group d-flex flex-row">
+                                                        <button type="button" class="form-control btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                        <button type="button" class="form-control btn btn-primary">Enviar</button>            </div>
         </div>
                                     </form>
     </div>
