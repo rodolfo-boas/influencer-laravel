@@ -14,49 +14,10 @@
 
         <div class="col-2 filtro-content">
             <p>Navegue por Filtro</p>
-
-            <ul>Moda
-                <li> <a href="">Trends</a> </li>
-                <li> <a href="">Casual</a> </li>
-                <li> <a href="">Street</a> </li>
-            </ul>
-            <ul>Saúde
-                <li> <a href="">Alimentação</a> </li>
-                <li> <a href="">Medicina</a> </li>
-                <li> <a href="">Emagrecimento</a> </li>
-            </ul>
-            <ul>Lifestyle
-                <li> <a href="">Cultura</a> </li>
-                <li> <a href="">Artes</a> </li>
-                <li> <a href="">Música</a> </li>
-            </ul>
-            <ul>Esporte
-                <li> <a href="">Pilates</a> </li>
-                <li> <a href="">Musculação</a> </li>
-                <li> <a href="">Corredores</a> </li>
-            </ul>
+            @foreach ($categorias as $categoria)
+                <a href="#">{{($categoria->categoria)}}</a>
+            @endforeach
         </div>
-
-        {{-- <div class="col-10">
-            <figure class="col-lg-3 col-md-4 col-12 d-flex justify-content-center">
-                <div class="produto-imagem text-center">
-                    <div class="flip-container">
-                    <div class="flipper">
-                        <img class="img-fluid" src="image/modelo1.jpg" alt="">
-                        <div class="flip-card-back">
-                        <div class="text-box">
-                        <h2>@Ana_Alves</h2>
-                        <p>27000 seguidores</p>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    {{-- <h2 class="name-content">{{ Auth::user()->nome }}</h2> --}}
-        {{-- <button class="mb-5 button-content" type="button" data-toggle="modal" data-target=".modalInfo">Influencer</button>
-                    <button class="mb-5 button-content" type="button" data-toggle="modal" data-target="#modalCampanha">Criar Campanha</button>
-                </div>
-            </figure>            
-        </div> --}}
 
         <section>
             @foreach ($campanhas as $campanha)
@@ -87,21 +48,6 @@
             @endforeach
 
         </section>
-
-        {{-- <div>
-            @foreach ($campanhas as $campanha)
-            <tr>
-                <td scope="row">
-                    <img width="80" src="{{url($campanha->imagem)}}" alt="">
-                </td>
-                <td scope="row">{{$campanha->titulo}}</td>
-                <td scope="row">{{$campanha->descricao}}</td>
-                <td scope="row">{{$campanha->categoria->categoria}}</td>
-                <td scope="row">{{$campanha->inicio}}</td>
-                <td scope="row">{{$campanha->fim}}</td>
-            </tr>
-            @endforeach
-        </div> --}}
 
         </table>
         </article>
@@ -181,33 +127,6 @@
 </div>
 
 </header>
-
-
-
-
-
-
-
-{{-- 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard influencer</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-</div>
-@endif
-
-Olá {{ Auth::user()->nome }}
-</div>
-</div>
-</div>
-</div>
-</div> --}}
 
 
 {{------------------------------------------- Fim do INFLUENCER ----------------------------------}}
@@ -317,7 +236,7 @@ Olá {{ Auth::user()->nome }}
                                 <input type="date" name="fim" class="form-control col-10" id="fim">
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                 <button type="submit" class="btn btn-primary">Enviar</button>
                             </div>
                         </div>
