@@ -48,7 +48,7 @@
                             <div class="col-md-6">
                                 <input id="cnpj" type="text" class="form-control @error('cnpj') is-invalid @enderror"
                                     name="cnpj" value="{{ old('cnpj') }}" required autocomplete="cnpj" autofocus
-                                    placeholder="Informe o CNPJ da sua empresa?">
+                                    placeholder="Informe o CNPJ da sua empresa?" minlength="14" maxlength="14">
 
                                 @error('cnpj')
                                 <span class="invalid-feedback" role="alert">
@@ -59,13 +59,13 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('Contato') }}</label>
+                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('Telefone') }}</label>
 
                             <div class="col-md-6">
                                 <input id="contato" type="text"
                                     class="form-control @error('contato') is-invalid @enderror" name="contato"
                                     value="{{ old('contato') }}" required autocomplete="contato" autofocus
-                                    placeholder="Informe um numero de contato da sua empresa?">
+                                    placeholder="Informe um numero de contato da sua empresa?" minlength="11" maxlength="11">
 
                                 @error('contato')
                                 <span class="invalid-feedback" role="alert">
@@ -78,7 +78,7 @@
 
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-mail') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
@@ -101,7 +101,7 @@
                                 <input id="password" type="password"
                                     class="form-control @error('password') is-invalid @enderror" name="password"
                                     required autocomplete="new-password"
-                                    placeholder="Digite uma senha com no minimo 8 digitos">
+                                    placeholder="Digite uma senha com no minimo 8 digitos" minlength="8">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -118,7 +118,7 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control"
                                     name="password_confirmation" required autocomplete="new-password"
-                                    placeholder="Digite a mesma senha para confirmação">
+                                    placeholder="Digite a mesma senha para confirmação" minlength="8">
                             </div>
                         </div>
 

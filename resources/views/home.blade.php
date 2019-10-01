@@ -15,7 +15,7 @@
         <div class="col-2 filtro-content">
             <p>Navegue por Filtro</p>
             @foreach ($categorias as $categoria)
-                <a href="#">{{($categoria->categoria)}}</a>
+            <a href="#">{{($categoria->categoria)}}</a>
             @endforeach
         </div>
 
@@ -24,21 +24,31 @@
             <div class="card mb-3" style="max-width: 900px;">
                 <div class="row no-gutters">
                     <div class="col-md-5">
-                        <img width="100" src="{{url($campanha->imagem)}}" alt="">
+                        <img class="imagem" src="{{url($campanha->imagem)}}" alt="">
                     </div>
                     <div class="col-md-7">
                         <div class="card-body">
-                                <td scope="row">{{$campanha->titulo}}</td>
-                            <p class="card-text"><td scope="row">{{$campanha->descricao}}</td></p>
-                            <div class="d-flex flex-row">
-                                    <div class="flex-column">
-                                        <p><td scope="row">{{$campanha->categoria->categoria}}</td></p>
-                                    </div>
+                            <td scope="row">{{$campanha->titulo}}</td>
+                            <p class="card-text">
+                                <td scope="row">{{$campanha->descricao}}</td>
+                            </p>
+                            <div class="d-flex flex-column">
+                                <div class="flex-column">
+                                    <p>categoria: 
+                                        <td scope="row">{{$campanha->categoria->categoria}}</td>
+                                    </p>
+                                </div>
+                                <br>
+                                <br>
                                 <div class="flex-column mr-5">
-                                    <p class="card-text"><td scope="row">{{date('d-m-Y', strtotime($campanha->inicio))}}</td></p>
+                                    <p class="card-text"> Data inicial: 
+                                        <td scope="row">{{date('d-m-Y', strtotime($campanha->inicio))}}</td>
+                                    </p>
                                 </div>
                                 <div class="flex-column">
-                                    <p class="card-text"><td scope="row">{{date('d-m-Y', strtotime($campanha->fim))}}</td></p>
+                                    <p class="card-text"> Data final:
+                                        <td scope="row">{{date('d-m-Y', strtotime($campanha->fim))}}</td>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -166,7 +176,7 @@
 
         <div class="col-10">
             <figure class="col-lg-3 col-md-4 col-12 d-flex justify-content-center">
-                {{-- <div class="produto-imagem text-center">
+                <div class="produto-imagem text-center">
                     <div class="flip-container">
                         <div class="flipper">
                             <img class="img-fluid" src="image/campanha.jpg" alt="">
@@ -176,8 +186,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
-                    {{-- <h2 class="name-content">{{ Auth::user()->nome }}</h2> --}}
+                    </div>
+                    <h2 class="name-content">{{ Auth::user()->nome }}</h2>
                     <button class="mb-5 button-content" type="button" data-toggle="modal" data-target=".modalInfo">Modal
                         Info</button>
                 </div>
