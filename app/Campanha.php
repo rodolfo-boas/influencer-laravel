@@ -12,6 +12,7 @@ class Campanha extends Model
     protected $fillable = [
         "titulo", "descricao", "imagem", "inicio", "fim", "id_categoria"
     ];
+    protected $dates = ["inicio", "fim"];
 
     public function categoria(){
         return $this->hasOne(Categoria::class, 'id', 'id_categoria');
