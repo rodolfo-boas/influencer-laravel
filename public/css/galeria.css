@@ -40,14 +40,6 @@ nav ul li a.menuLogado  {
   background-color: purple;
 }
 
-/* nav ul li:nth-child(2n) a {
-  background-color: purple;
-}
-
-nav ul li:nth-child(1n) a {
-  background-color: purple;
-} */
-
 /* Navegação Interna Fim */
 
 .container-fluid h1 {
@@ -118,7 +110,7 @@ nav ul li:nth-child(1n) a {
 	top: 0;
 	left: 0;
   }
-  
+
   .text-box{
     display: flex;
     flex-direction: column;
@@ -142,9 +134,3 @@ nav ul li:nth-child(1n) a {
   }
 
   /* Galeria Interna Fim */
-
-  /* Modal Influencer Início */
-
-  .modal-influencer{
-    height: 550px;
-  }

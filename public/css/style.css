@@ -1,877 +1,859 @@
-*{
-    font-family: 'Montserrat', sans-serif;
+* {
+  font-family: "Montserrat", sans-serif;
 }
 
-body{
-    font-size: 18px;
+body {
+  font-size: 18px;
 }
 
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Montserrat", sans-serif;
 }
 
 p {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.imagem{
+.imagem {
+  width: 100%;
+}
+/* ================================================ Header Início ====================================== */
+
+.navDireita {
+  margin-right: 60px;
+}
+
+nav ul li:nth-child(1) a {
+  background-color: #fa9aed;
+}
+
+nav ul li:nth-child(2n) a {
+  background-color: #f869e5;
+}
+
+nav ul li:nth-child(3n) a {
+  background-color: #c53eb3;
+}
+
+nav ul li:nth-child(4n) a {
+  background-color: #9e308f;
+}
+
+nav ul li:nth-child(5n) a {
+  background-color: #7e1370;
+}
+
+nav ul li a:hover {
+  color: white;
+}
+
+nav ul li.active a {
+  color: white;
+}
+
+nav ul li a {
+  margin: 25px 25px;
+  /* display: block; */
+  padding: 10px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  /* position: relative; */
+  color: rgba(255, 255, 255, 0.8);
+  /* -webkit-transform: translateX(-15%); */
+  /* transform: translateX(-15%); */
+  border-radius: 50px;
+  width: 130%;
+  text-align: center;
+  transition-duration: 0.25s;
+}
+
+/* fim navbar padrao bootstrap */
+header {
+  background-color: #ffffff;
+}
+
+.navbar-brand {
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-right: 0%;
+}
+
+.dot-color {
+  color: crimson;
+  font-size: 30px;
+}
+
+header span a:hover {
+  color: purple;
+  text-decoration: none;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: lighter;
+}
+
+/* ================================================ Header Fim ========================================== */
+
+/* ================================================ Banner Início ======================================= */
+
+section #bg-content {
+  background-color: purple;
+}
+
+section article h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 1em;
+  padding: 15px 10px 10px 5px;
+}
+
+section article .main-text {
+  text-align: center;
+  /* font-family: 'Courier New', Courier, monospace; */
+  font-size: 0.7em;
+}
+
+section article #btn-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+section article .btn-marca {
+  background-color: yellow;
+  border: none;
+  padding: 4px 38px;
+  border-radius: 50px;
+  margin-right: 5%;
+}
+
+section article .btn-marca:hover {
+  opacity: 0.8;
+}
+
+section article .btn-influencer {
+  background-color: yellow;
+  border: none;
+  padding: 4px 30px;
+  border-radius: 50px;
+}
+
+section article .btn-influencer:hover {
+  opacity: 0.8;
+}
+
+section article .btn-marca h3 {
+  font-size: 1em;
+  font-weight: lighter;
+  color: purple;
+  font-family: helvetica;
+  text-align: center;
+  padding: 6px 0 0 0;
+  font-family: "arial", cursive;
+}
+
+section article .btn-influencer h3 {
+  font-size: 0.7em;
+  font-weight: lighter;
+  color: black;
+  font-family: helvetica;
+  text-align: center;
+  padding: 6px 0 0 0;
+  font-family: "Lobster", cursive;
+}
+
+/* ================================================ Banner Fim ========================================== */
+
+/* ================================================ Carrossel Início ======================================= */
+
+.container-fluid h3 {
+  font-size: 1.1em;
+  text-transform: capitalize;
+}
+
+.img-carrossel {
+  max-width: 50px;
+}
+
+/* ================================================ Carrossel Fim ======================================= */
+
+/* ================================================ Serviços Início ======================================= */
+
+.servicos {
+  background: purple;
+  color: white;
+}
+
+.servicos h3 {
+  font-size: 1.1em;
+  text-transform: uppercase;
+  padding-top: 1rem;
+}
+
+.servicos p {
+  font-size: 1em;
+}
+
+.servicos-texto {
+  padding: 10px 20px;
+}
+
+.servicos-texto h2 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.servicos-texto p {
+  font-size: 0.8em;
+}
+
+.imagem-services {
+  max-width: 100%;
+  max-height: 300px;
+}
+
+/* ================================================ Serviços Fim ========================================== */
+
+/* ================================================ Galeria Início ======================================= */
+
+.titulo-galeria {
+  text-align: center;
+  font-size: 1.1em;
+  text-transform: uppercase;
+  padding-top: 1rem;
+}
+
+.polaroid {
+  border: 12px solid #fff;
+  border-bottom: 20px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #888;
+  -moz-box-shadow: 3px 3px 3px #888;
+  box-shadow: 3px 3px 3px #888;
+  height: auto;
+  max-width: 70%;
+}
+
+.polaroid h3 {
+  font-size: 0.7em;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.polaroid div p {
+  font-size: 0.7em;
+  padding-top: 3px;
+}
+
+.insta {
+  max-height: 15px;
+  cursor: pointer;
+}
+
+.influencers-desktop {
+  display: none;
+}
+
+/* ================================================ Galeria Fim ========================================= */
+
+/* ======================================= Gallery Influencers Inicio =================================== */
+
+body .todos-influ {
+  padding-top: 4vh;
+  background-color: mediumpurple;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+
+body section article .influenciador {
+  background-image: url("../image/influ.jpg");
+  height: 45vh;
+  width: 80vw;
+  margin: 2vh auto;
+  background-size: cover;
+  border-radius: 45px;
+  border: 4px solid yellow;
+  overflow: hidden;
+  padding: 0;
+}
+
+body section article .informacoes:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 45px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 10px;
+}
+
+article .influenciador .informacoes p {
+  visibility: hidden;
+}
+
+article .influenciador .informacoes:hover p {
+  visibility: visible;
+}
+
+article .influenciador .informacoes h2 {
+  visibility: hidden;
+}
+
+article .influenciador .informacoes:hover h2 {
+  visibility: visible;
+}
+
+article .influenciador .informacoes h2 {
+  font-size: 1.5em;
+  margin: 6vh 0;
+  background-color: yellow;
+  color: black;
+  padding: 0 3vw;
+  border-radius: 45px;
+}
+
+article .influenciador .informacoes p {
+  font-size: 0.8em;
+  font-weight: bolder;
+  margin: 0vh 1vw;
+  width: 70vw;
+}
+
+article .influenciador .informacoes:hover {
+  background-color: rgba(204, 40, 177 0.8);
+}
+
+/* ======================================== Gallery Infliencers Fim ===================================== */
+
+/* ======================================== Números js Início =========================================== */
+
+.numeros-content {
+  background-color: purple;
+  padding: 30px 0;
+}
+
+.numeros-content h3 {
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
+
+.icon-content {
+  filter: invert(100%);
+  max-width: 100px;
+  max-height: 60px;
+}
+
+.numeros-content .numerosoficiais {
+  font-size: 1.7em;
+  letter-spacing: 1px;
+}
+
+.numeros-content .numeroslegendas {
+  font-size: 1em;
+}
+
+/* ======================================== Números js Fim ============================================== */
+
+/* ================================================ Review Início ======================================= */
+
+section.reviewContent {
+  background-color: purple;
+  color: white;
+}
+
+.reviewContent h3 {
+  font-size: 1.1em;
+  text-transform: uppercase;
+  padding-top: 1rem;
+}
+
+section.reviewContent p {
+  line-height: 1.9;
+  font-size: 0.9em;
+}
+
+section article .reviewBorder {
+  border-bottom: 1px solid white;
+}
+
+article div h4 {
+  color: white;
+  font-size: 0.8em;
+  margin-top: 10px;
+}
+
+/* Modal Influencer Início */
+
+.modal-campanha {
+  height: 600px;
+}
+
+/* ================================================ Review Fim ======================================= */
+
+/* ============================================= Campanha */
+.campanha-top {
+    padding-top: 20px;
+}
+
+.campanha-content {
+  font-size: 0.8em;
+}
+
+/* Dispositivos small (telefones em modo paisagem, com 359px ou mais) */
+
+@media (min-width: 359px) and (max-width: 413.98px) {
+  /* Header */
+
+  nav ul.navbar-nav {
+    margin: 0px auto;
+  }
+
+  nav ul li a {
+    margin: 0px auto;
     width: 100%;
-}
-    /* ================================================ Header Início ====================================== */
-
-    .navDireita{
-        margin-right: 60px;
-    } 
-    
-    nav ul li:nth-child(1) a {
-        background-color: #fa9aed;
-    }
-    
-    nav ul li:nth-child(2n) a {
-        background-color: #f869e5;
-    }
-    
-    nav ul li:nth-child(3n) a {
-        background-color: #c53eb3;
-    }
-    
-    nav ul li:nth-child(4n) a {
-        background-color: #9e308f;
-    }
-    
-    nav ul li:nth-child(5n) a {
-        background-color: #7e1370;
-    }
-    
-    nav ul li a:hover{
-        color: white;
-    }
-    
-    nav ul li.active a {
-        color: white;
-    }
-    
-    
-    nav ul li a{
-        margin: 25px 25px;
-        /* display: block; */
-        padding: 10px 30px;
-        text-decoration: none;
-        font-size: 18px;
-        /* position: relative; */
-        color: rgba(255, 255, 255, 0.8);
-        /* -webkit-transform: translateX(-15%); */
-        /* transform: translateX(-15%); */
-        border-radius: 50px;
-        width: 130%;
-        text-align: center;
-        transition-duration: 0.25s;
-    }
-    
-        /* fim navbar padrao bootstrap */
-    header{
-        background-color:#ffffff;
-    }
-    
-    .navbar-brand{
-        color: black;
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 1.2em;
-        margin-right: 0%;
-    }
-    
-    .dot-color {
-        color: crimson;
-        font-size: 30px;
-    }
-    
-    header span a:hover{
-        color: purple;
-        text-decoration: none;
-    }
-    
-    header nav ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    
-    .navbar-light .navbar-nav .nav-link{
-        color: #fff;
-        font-size: 0.9em;
-        font-weight: lighter;
-    }
-
-    /* ================================================ Header Fim ========================================== */
-
-    /* ================================================ Banner Início ======================================= */
-
-
-
-    section #bg-content {
-    background-color: purple;
-}
-
-section article h1{
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 1em;
-    padding: 15px 10px 10px 5px;
-}
-
-section article .main-text{
-    text-align: center;
-    /* font-family: 'Courier New', Courier, monospace; */
-    font-size: 0.7em;
-}
-
-section article #btn-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-section article .btn-marca{
-    background-color: yellow;
-    border: none;
-    padding: 4px 38px;
+    /* margin-left:60px; */
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
     border-radius: 50px;
-    margin-right: 5%;
-}
-
-section article .btn-marca:hover{
-    opacity: 0.8;
-}
-
-section article .btn-influencer{
-    background-color: yellow;
-    border: none;
-    padding: 4px 30px;
-    border-radius: 50px;
-}
-
-section article .btn-influencer:hover{
-    opacity: 0.8;
-}
-
-section article .btn-marca h3{
-    font-size: 1em;
-    font-weight: lighter;
-    color: purple;
-    font-family: helvetica;
     text-align: center;
-    padding: 6px 0 0 0;
-    font-family: 'arial', cursive;
-}
+    transition-duration: 0.25s;
+  }
+  /* Banner */
 
-section article .btn-influencer h3{
-    font-size: 0.7em;
-    font-weight: lighter;
-    color: black;
-    font-family: helvetica;
+  section article .main-text {
     text-align: center;
-    padding: 6px 0 0 0;
-    font-family: 'Lobster', cursive;
-}
-
-
-    /* ================================================ Banner Fim ========================================== */
-
-    /* ================================================ Carrossel Início ======================================= */
-
-.container-fluid h3{
-    font-size: 1.1em;
-    text-transform: capitalize;
-}
-
-.img-carrossel{
-    max-width: 50px;
-}
-
-    /* ================================================ Carrossel Fim ======================================= */
-
-    /* ================================================ Serviços Início ======================================= */
-
-.servicos{
-    background: purple;
-    color: white;
-}
-
-.servicos h3{
-    font-size: 1.1em;
-    text-transform: uppercase;
-    padding-top: 1rem;
-}
-
-.servicos p{
-    font-size: 1em;
-}
-
-.servicos-texto{
-    padding: 10px 20px;
-}
-
-.servicos-texto h2{
-    font-size: 1em;
-    font-weight: bold;
-}
-
-.servicos-texto p{
+    font-family: "Courier New", Courier, monospace;
     font-size: 0.8em;
-}
+    font-family: "Montserrat", sans-serif;
+    padding: 0 20px;
+  }
 
+  .imagem-principal {
+    width: 300px;
+  }
 
-.imagem-services{
-        max-width: 100%;
-        max-height: 300px;
-}
+  /* Carrossel */
 
-    /* ================================================ Serviços Fim ========================================== */
+  .container-fluid h3 {
+    font-size: 1.3em;
+  }
 
-    /* ================================================ Galeria Início ======================================= */
+  /* Serviços */
 
-.titulo-galeria{
-    text-align: center;
-    font-size: 1.1em;
-    text-transform: uppercase;
+  .servicos h3 {
+    font-size: 1.3em;
     padding-top: 1rem;
+  }
+
+  .servicos-texto p {
+    font-size: 0.9em;
+  }
+
+  /* Gallery */
+
+  .titulo-galeria {
+    text-align: center;
+    font-size: 1.3em;
+    padding-top: 1rem;
+  }
+
+  /* Numeros */
+
+  .numeros-content h3 {
+    font-size: 1.3em;
+    text-transform: uppercase;
+  }
+
+  /* Review */
+
+  .reviewContent h3 {
+    font-size: 1.3em;
+    padding-top: 1rem;
+  }
 }
 
-.polaroid{
+@media (min-width: 414px) and (max-width: 767.98px) {
+  /* Header */
+
+  nav ul.navbar-nav {
+    margin: 0px auto;
+  }
+
+  nav ul li a {
+    margin: 0px auto;
+    width: 100%;
+    /* margin-left:60px; */
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    text-align: center;
+    transition-duration: 0.25s;
+  }
+  /* Banner */
+
+  section article h1 {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 20px 15px 15px 5px;
+  }
+
+  section article .main-text {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.8em;
+    font-family: "Montserrat", sans-serif;
+    padding: 0 45px;
+  }
+
+  .imagem-principal {
+    width: 350px;
+  }
+
+  /* Carrossel */
+  .container-fluid h3 {
+    font-size: 1.5em;
+  }
+
+  .img-carrossel {
+    max-width: 60px;
+  }
+
+  /* Serviços */
+
+  .servicos h3 {
+    font-size: 1.5em;
+    padding-top: 1rem;
+  }
+
+  /* Galeria */
+
+  .titulo-galeria {
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 1rem;
+  }
+
+  .polaroid {
     border: 12px solid #fff;
     border-bottom: 20px solid #fff;
     -webkit-box-shadow: 3px 3px 3px #888;
     -moz-box-shadow: 3px 3px 3px #888;
     box-shadow: 3px 3px 3px #888;
     height: auto;
-    max-width: 70%;
-}
+    max-width: 270px;
+  }
 
-.polaroid h3{
-    font-size: 0.7em;
-    font-weight: bold;
-    padding-top: 5px;
-}
+  /* Numeros */
 
-.polaroid div p{
-    font-size: 0.7em;
-    padding-top: 3px;
-}
-
-.insta {
-    max-height: 15px;
-    cursor: pointer;
-}
-
-.influencers-desktop{
-    display: none;
-}
-
-    /* ================================================ Galeria Fim ========================================= */
-
-
-
-    /* ======================================= Gallery Influencers Inicio =================================== */
-
-body .todos-influ{
-    padding-top: 4vh;
-    background-color: mediumpurple;
-    padding-left: 1vw;
-    padding-right: 1vw;
-}
-
-body section article .influenciador{
-    background-image: url("../image/influ.jpg");
-    height: 45vh;
-    width: 80vw; 
-    margin: 2vh auto;
-    background-size: cover;
-    border-radius: 45px; 
-    border: 4px solid yellow;
-    overflow: hidden;
-    padding: 0 ;
-}
-
-body section article .informacoes:hover{
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 45px;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 10px;
-}
-
-article .influenciador .informacoes p{
-    visibility: hidden;
-}
-
-article .influenciador .informacoes:hover p{
-    visibility: visible;
-}
-
-article .influenciador .informacoes h2{
-    visibility: hidden;
-}
-
-article .influenciador .informacoes:hover h2{
-    visibility: visible;
-}
-
-article .influenciador .informacoes h2{
+  .numeros-content h3 {
     font-size: 1.5em;
-    margin: 6vh 0;
-    background-color: yellow;
-    color: black;
-    padding: 0 3vw;
-    border-radius: 45px;
-}
-
-article .influenciador .informacoes p{
-    font-size: 0.8em;
-    font-weight: bolder;
-    margin: 0vh  1vw;
-    width: 70vw;
-}
-
-article .influenciador .informacoes:hover{
-    background-color: rgba(204,40,177 0.8);
-}
-
-    /* ======================================== Gallery Infliencers Fim ===================================== */
-
-    /* ======================================== Números js Início =========================================== */
-
-.numeros-content{
-    background-color: purple;
-    padding: 30px 0;
-}
-
-.numeros-content h3{
-    font-size: 1.1em;
     text-transform: uppercase;
+  }
+
+  /* Review */
+
+  .reviewContent h3 {
+    font-size: 1.5em;
+    /* font-weight: bold; */
+    padding-top: 1rem;
+  }
 }
 
-.icon-content{
-    filter: invert(100%);
-    max-width: 100px;
-    max-height: 60px;
-}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Header */
 
-.numeros-content .numerosoficiais{
-    font-size: 1.7em;
-    letter-spacing: 1px;
-}
+  nav ul.navbar-nav {
+    margin: 0px auto;
+  }
 
-.numeros-content .numeroslegendas{
-    font-size: 1em;
-}
+  nav ul li a {
+    margin: 0px auto;
+    width: 100%;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    text-align: center;
+    transition-duration: 0.25s;
+  }
 
-    /* ======================================== Números js Fim ============================================== */
+  /* Banner */
 
-    /* ================================================ Review Início ======================================= */
+  section article h1 {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 0px;
+  }
 
-section.reviewContent{
-    background-color: purple;
-    color: white;
-}
+  .imagem-principal {
+    width: 431px;
+  }
 
-.reviewContent h3{
-    font-size: 1.1em;
+  /* Carrossel */
+
+  .container-fluid h3 {
+    font-size: 1.6em;
+  }
+
+  .img-carrossel {
+    max-width: 80px;
+  }
+
+  /* Servicos */
+
+  .servicos h3 {
+    font-size: 1.6em;
     text-transform: uppercase;
     padding-top: 1rem;
-}
+  }
 
-section.reviewContent p{
-    line-height: 1.9;
-    font-size: 0.9em;
-}
+  .servicos-texto h2 {
+    font-size: 1.1em;
+    font-weight: bold;
+  }
 
-section article .reviewBorder{
-    border-bottom: 1px solid white;
-    
-}
+  .imagem-services {
+    max-width: 125%;
+    max-height: 301px;
+  }
 
-article div h4{
+  /* Galeria */
+
+  .titulo-galeria {
+    text-align: center;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    padding-top: 1rem;
+  }
+
+  .polaroid {
+    border: 12px solid #fff;
+    border-bottom: 20px solid #fff;
+    -webkit-box-shadow: 3px 3px 3px #888;
+    -moz-box-shadow: 3px 3px 3px #888;
+    box-shadow: 3px 3px 3px #888;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .servicos {
+    background: purple;
     color: white;
-    font-size: 0.8em;
-    margin-top: 10px;
+    padding: 30px;
+  }
+
+  .influencers-desktop {
+    display: block;
+  }
 }
 
-    /* ================================================ Review Fim ======================================= */
-
-    /* ================================================ Footer Inicio ======================================= */
-
-
-    /* ================================================ Footer Fim ========================================== */
-
-    /* ============================================= Campanha */
-
-    .campanha-content{
-        font-size: 0.8em;
-    }
-
-
-    /* Dispositivos small (telefones em modo paisagem, com 359px ou mais) */
-
-    @media (min-width: 359px) and (max-width: 413.98px) {
-
-        /* Header */
- 
-         nav ul.navbar-nav {
-             margin: 0px auto;
-         }
-         
-         nav ul li a{
-             margin: 0px auto;
-             width: 100%;
-             /* margin-left:60px; */
-             padding: 10px 30px;
-             text-decoration: none;
-             font-size: 18px;
-             color: rgba(255, 255, 255, 0.8);
-             border-radius: 50px;
-             text-align: center;
-             transition-duration: 0.25s;
-         }
-        /* Banner */
-
-        section article .main-text{
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.8em;
-            font-family: 'Montserrat', sans-serif;
-            padding: 0 20px;
-        }
-
-        .imagem-principal{
-            width: 300px;
-        }
-
-        /* Carrossel */
-
-        .container-fluid h3 {
-            font-size: 1.3em;
-            
-        }
-
-        /* Serviços */
-
-        .servicos h3 {
-            font-size: 1.3em;
-            padding-top: 1rem;
-        }
-
-        .servicos-texto p {
-            font-size: 0.9em;
-        }
-
-        /* Gallery */
-
-        .titulo-galeria {
-            text-align: center;
-            font-size: 1.3em;
-            padding-top: 1rem;
-        }
-
-        /* Numeros */
-
-        .numeros-content h3{
-            font-size: 1.3em;
-            text-transform: uppercase;
-        }
-        
-
-        /* Review */
-
-        .reviewContent h3 {
-            font-size: 1.3em;
-            padding-top: 1rem;
-        }
-
-    }
-
-    @media (min-width: 414px) and (max-width: 767.98px) { 
-
-        /* Header */
-
-        nav ul.navbar-nav {
-            margin: 0px auto;
-        }
-        
-        nav ul li a{
-            margin: 0px auto;
-            width: 100%;
-            /* margin-left:60px; */
-            padding: 10px 30px;
-            text-decoration: none;
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.8);
-            border-radius: 50px;
-            text-align: center;
-            transition-duration: 0.25s;
-        }
-        /* Banner */
-
-        section article h1 {
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            text-align: center;
-            font-size: 1.3em;
-            padding: 20px 15px 15px 5px;
-        }
-
-        section article .main-text {
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.8em;
-            font-family: 'Montserrat', sans-serif;
-            padding: 0 45px;
-        }
-
-        .imagem-principal {
-            width: 350px;
-        }
-
-        /* Carrossel */
-        .container-fluid h3 {
-            font-size: 1.5em;
-        }
-
-        .img-carrossel {
-            max-width: 60px;
-        }
-
-        /* Serviços */
-
-
-        .servicos h3 {
-            font-size: 1.5em;
-            padding-top: 1rem;
-        }
-
-        /* Galeria */
-
-        .titulo-galeria {
-            text-align: center;
-            font-size: 1.5em;
-            padding-top: 1rem;
-        }
-
-        .polaroid {
-            border: 12px solid #fff;
-            border-bottom: 20px solid #fff;
-            -webkit-box-shadow: 3px 3px 3px #888;
-            -moz-box-shadow: 3px 3px 3px #888;
-            box-shadow: 3px 3px 3px #888;
-            height: auto;
-            max-width: 270px;
-        }
-
-        /* Numeros */
-
-        .numeros-content h3{
-            font-size: 1.5em;
-            text-transform: uppercase;
-        }
-
-        /* Review */
-
-        .reviewContent h3 {
-            font-size: 1.5em;
-            /* font-weight: bold; */
-            padding-top: 1rem;
-        }
-
-
-    }
-
-    @media (min-width: 768px) and (max-width: 991.98px) {
-
-        /* Header */
- 
-         nav ul.navbar-nav {
-             margin: 0px auto;
-         }
-         
-         nav ul li a{
-             margin: 0px auto;
-             width: 100%;
-             padding: 10px 30px;
-             text-decoration: none;
-             font-size: 18px;
-             color: rgba(255, 255, 255, 0.8);
-             border-radius: 50px;
-             text-align: center;
-             transition-duration: 0.25s;
-         }
- 
-        /* Banner */
-
-        section article h1 {
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            text-align: center;
-            font-size: 1.5em;
-            padding-top: 0px;
-        }
-
-        .imagem-principal {
-            width: 431px;
-        }
-
-        /* Carrossel */
-
-        .container-fluid h3 {
-            font-size: 1.6em;
-        }
-
-        .img-carrossel {
-            max-width: 80px;
-        }
-
-        /* Servicos */
-
-        .servicos h3 {
-            font-size: 1.6em;
-            text-transform: uppercase;
-            padding-top: 1rem;
-        }
-
-        .servicos-texto h2 {
-            font-size: 1.1em;
-            font-weight: bold;
-        }
-
-        .imagem-services {
-            max-width: 125%;
-            max-height: 301px;
-        }
-
-        /* Galeria */
-
-        .titulo-galeria {
-            text-align: center;
-            font-size: 1.4em;
-            text-transform: uppercase;
-            padding-top: 1rem;
-        }
-
-        .polaroid {
-            border: 12px solid #fff;
-            border-bottom: 20px solid #fff;
-            -webkit-box-shadow: 3px 3px 3px #888;
-            -moz-box-shadow: 3px 3px 3px #888;
-            box-shadow: 3px 3px 3px #888;
-            height: auto;
-            max-width: 100%;
-        }
-
-        .servicos {
-            background: purple;
-            color: white;
-            padding: 30px;
-        }
-
-        .influencers-desktop{
-            display: block;
-        }
-
-    }
-
-    @media (min-width: 992px) and (max-width: 1199.98px) {
-
-        /* Banner */
-
-        .imagem-principal {
-            max-width: 100%;
-        }
-
-        section #bg-content {
-            background-color: purple;
-            height: 70vh;
-        }
-
-        section article h1 {
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            text-align: center;
-            font-size: 1.8em;
-        }
-
-        section article .main-text {
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1em;
-            font-family: 'Montserrat', sans-serif;
-            padding: 0 40px;
-        }
-
-        /* Carrossel */
-
-        .container-fluid h3 {
-            font-size: 1.6em;
-        }
-
-        .img-carrossel {
-            max-width: 90px;
-        }
-
-        /* Servicos */
-
-        .servicos-texto h2 {
-            font-size: 1.3em;
-            font-weight: bold;
-        }
-
-        .servicos-texto p {
-            font-size: 1em;
-        }
-
-        /* Galeria */
-
-        .titulo-galeria {
-            text-align: center;
-            font-size: 1.6em;
-            text-transform: uppercase;
-            padding-top: 1rem;
-        }
-
-        .polaroid h3 {
-            font-size: 0.9em;
-            text-transform: uppercase;
-            padding-top: 5px;
-            text-align: center;
-        }
-
-        .polaroid div p {
-            font-size: 0.7em;
-            padding-top: 3px;
-        }
-
-        /* numeros */
-
-        .numeros-content h3{
-            font-size: 1.6em;
-            text-transform: uppercase;
-        }
-
-        /* Review */
-
-        .reviewContent h3 {
-            font-size: 1.6em;
-            text-transform: uppercase;
-            padding-top: 1rem;
-        }
-
-        section.reviewContent p {
-            line-height: 1.9;
-            font-size: 1em;
-        }
-
-    }
-
-    @media (min-width: 1200px){
-
-        /* Banner */
-
-        section #bg-content {
-            background-color: purple;
-            height: 70vh;
-        }
-
-        .imagem-principal {
-            max-width: 65%;
-        }
-
-        section article h1 {
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            text-align: center;
-            font-size: 1.8em;
-            padding: 0 40px 10px 40px;
-        }
-        section article .main-text {
-            text-align: center;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 1.1em;
-            font-family: 'Montserrat', sans-serif;
-            padding: 0px 86px;
-        }
-
-        /* Carrossel */
-
-        .container-fluid h3 {
-            font-size: 1.6em;
-        }
-
-        .img-carrossel {
-            max-width: 100px;
-        }
-
-        /* Serviços */
-
-        .servicos h3 {
-            font-size: 1.6em;
-            text-transform: uppercase;
-            padding-top: 1rem;
-        }
-
-        .servicos-texto h2 {
-            font-size: 1.4em;
-            font-weight: bold;
-        }
-
-        .servicos-texto p {
-            font-size: 1.1em;
-        }
-
-        /* Galeria */
-
-        .titulo-galeria {
-            text-align: center;
-            font-size: 1.6em;
-            text-transform: uppercase;
-            padding-top: 1rem;
-        }
-
-        .polaroid h3 {
-            font-size: 1em;
-            text-transform: uppercase;
-            padding-top: 5px;
-            text-align: center;
-        }
-
-        .polaroid div p {
-            font-size: 0.8em;
-            padding-top: 3px;
-        }
-
-        .insta {
-            max-height: 20px;
-            cursor: pointer;
-        }
-
-        /* Numeros */
-
-        .numeros-content{
-            background-color: purple;
-            padding: 50px 0;
-        }
-
-        .numeros-content h3{
-            font-size: 1.6em;
-            text-transform: uppercase;
-        }
-        
-        .numeros-content .numerosoficiais{
-            font-size: 2.2em;
-            letter-spacing: 2px;
-        }
-        
-        .numeros-content .numeroslegendas{
-            font-size: 1.3em;
-        }
-        
-
-    }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  /* Banner */
+
+  .imagem-principal {
+    max-width: 100%;
+  }
+
+  section #bg-content {
+    background-color: purple;
+    height: 70vh;
+  }
+
+  section article h1 {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.8em;
+  }
+
+  section article .main-text {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    font-family: "Montserrat", sans-serif;
+    padding: 0 40px;
+  }
+
+  /* Carrossel */
+
+  .container-fluid h3 {
+    font-size: 1.6em;
+  }
+
+  .img-carrossel {
+    max-width: 90px;
+  }
+
+  /* Servicos */
+
+  .servicos-texto h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+
+  .servicos-texto p {
+    font-size: 1em;
+  }
+
+  /* Galeria */
+
+  .titulo-galeria {
+    text-align: center;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    padding-top: 1rem;
+  }
+
+  .polaroid h3 {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    padding-top: 5px;
+    text-align: center;
+  }
+
+  .polaroid div p {
+    font-size: 0.7em;
+    padding-top: 3px;
+  }
+
+  /* numeros */
+
+  .numeros-content h3 {
+    font-size: 1.6em;
+    text-transform: uppercase;
+  }
+
+  /* Review */
+
+  .reviewContent h3 {
+    font-size: 1.6em;
+    text-transform: uppercase;
+    padding-top: 1rem;
+  }
+
+  section.reviewContent p {
+    line-height: 1.9;
+    font-size: 1em;
+  }
+}
+
+@media (min-width: 1200px) {
+  /* Banner */
+
+  section #bg-content {
+    background-color: purple;
+    height: 70vh;
+  }
+
+  .imagem-principal {
+    max-width: 65%;
+  }
+
+  section article h1 {
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.8em;
+    padding: 0 40px 10px 40px;
+  }
+  section article .main-text {
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.1em;
+    font-family: "Montserrat", sans-serif;
+    padding: 0px 86px;
+  }
+
+  /* Carrossel */
+
+  .container-fluid h3 {
+    font-size: 1.6em;
+  }
+
+  .img-carrossel {
+    max-width: 100px;
+  }
+
+  /* Serviços */
+
+  .servicos h3 {
+    font-size: 1.6em;
+    text-transform: uppercase;
+    padding-top: 1rem;
+  }
+
+  .servicos-texto h2 {
+    font-size: 1.4em;
+    font-weight: bold;
+  }
+
+  .servicos-texto p {
+    font-size: 1.1em;
+  }
+
+  /* Galeria */
+
+  .titulo-galeria {
+    text-align: center;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    padding-top: 1rem;
+  }
+
+  .polaroid h3 {
+    font-size: 1em;
+    text-transform: uppercase;
+    padding-top: 5px;
+    text-align: center;
+  }
+
+  .polaroid div p {
+    font-size: 0.8em;
+    padding-top: 3px;
+  }
+
+  .insta {
+    max-height: 20px;
+    cursor: pointer;
+  }
+
+  /* Numeros */
+
+  .numeros-content {
+    background-color: purple;
+    padding: 50px 0;
+  }
+
+  .numeros-content h3 {
+    font-size: 1.6em;
+    text-transform: uppercase;
+  }
+
+  .numeros-content .numerosoficiais {
+    font-size: 2.2em;
+    letter-spacing: 2px;
+  }
+
+  .numeros-content .numeroslegendas {
+    font-size: 1.3em;
+  }
+}

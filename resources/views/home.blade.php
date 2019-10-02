@@ -158,7 +158,7 @@
 
 <div class=" modal fade modalInfo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content modal-influencer">
+        <div class="modal-content modal-campanha">
             <section class="d-flex flex-row align-items-center justify-content-center">
                 <div class="col-6">
                     <img class="img-fluid" src="image/campanha.jpg" alt="">
@@ -168,7 +168,7 @@
                         @csrf
                         {{method_field('post')}}
                         <input type="hidden" name="id_marca" value ='{{ Auth::user()->id }}'>
-                        <div class="form-group campanha-content">
+                        <div class="form-group campanha-content campanha-top">
                             <label for="titulo">Título da Campanha</label>
                             <input type="text" name="titulo" class="form-control" id="titulo">
                         </div>
