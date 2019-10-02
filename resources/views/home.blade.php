@@ -132,23 +132,63 @@
         </div>
 
         <div class="col-10">
-            <figure class="col-lg-3 col-md-4 col-12 d-flex justify-content-center">
-                <div class="produto-imagem text-center">
+            <div class="row d-flex justify-content-center">
+                <div class=" offset-8 col-4 produto-imagem text-center">
                     <div class="flip-container">
                         <div class="flipper">
-                            <img class="img-fluid" src="image/campanha.jpg" alt="">
+                            {{-- imagem --}}
                             <div class="flip-card-back">
-                                <div class="text-box">
-                                    <h2>{{ Auth::user()->nome }}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mb-5 button-content" type="button" data-toggle="modal" data-target=".modalInfo">Criar
+                        campanha</button>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-12">
+                    @foreach ($campanhas as $campanha)
+                    @if($campanha->id_marca == Auth::user()->id)
+                    <div class="card mb-3" style="max-width: 900px;">
+                        <div class="row no-gutters">
+                            <div class="col-md-5">
+                                <img class="imagem" src="{{url($campanha->imagem)}}" alt="">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body">
+                                    <td scope="row">{{$campanha->titulo}}</td>
+                                    <p class="card-text">
+                                        <td scope="row">{{$campanha->descricao}}</td>
+                                    </p>
+                                    <div class="d-flex flex-column">
+                                        <div class="flex-column">
+                                            <p>categoria:
+                                                <td scope="row">{{$campanha->categoria->categoria}}</td>
+                                            </p>
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <div class="flex-column mr-5">
+                                            <p class="card-text"> Data inicial:
+                                                <td scope="row">{{date('d-m-Y', strtotime($campanha->inicio))}}</td>
+                                            </p>
+                                        </div>
+                                        <div class="flex-column">
+                                            <p class="card-text"> Data final:
+                                                <td scope="row">{{date('d-m-Y', strtotime($campanha->fim))}}</td>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <h2 class="name-content">{{ Auth::user()->nome }}</h2>
-                    <button class="mb-5 button-content" type="button" data-toggle="modal" data-target=".modalInfo">Modal
-                        Info</button>
+                    @endif
+                    @endforeach
                 </div>
-            </figure>
+            </div>
         </div>
     </div>
 </div>
@@ -167,7 +207,7 @@
                     <form method="POST" action="/campanha/adicionar" enctype="multipart/form-data">
                         @csrf
                         {{method_field('post')}}
-                        <input type="hidden" name="id_marca" value ='{{ Auth::user()->id }}'>
+                        <input type="hidden" name="id_marca" value='{{ Auth::user()->id }}'>
                         <div class="form-group campanha-content campanha-top">
                             <label for="titulo">Título da Campanha</label>
                             <input type="text" name="titulo" class="form-control" id="titulo">
