@@ -34,14 +34,14 @@
                             </p>
                             <div class="d-flex flex-column">
                                 <div class="flex-column">
-                                    <p>categoria: 
+                                    <p>categoria:
                                         <td scope="row">{{$campanha->categoria->categoria}}</td>
                                     </p>
                                 </div>
                                 <br>
                                 <br>
                                 <div class="flex-column mr-5">
-                                    <p class="card-text"> Data inicial: 
+                                    <p class="card-text"> Data inicial:
                                         <td scope="row">{{date('d-m-Y', strtotime($campanha->inicio))}}</td>
                                     </p>
                                 </div>
@@ -65,49 +65,6 @@
 
     </div>
 </div>
-
-<!-- Modal Campanha -->
-<div class="modal fade" id="modalCampanha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Minha Campanha</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="form-group d-flex flex-column">
-                    <label for="titulo">Título</label>
-                    <input type="text" name="titulo">
-                </div>
-                <div class="form-group">
-                    <label for="message-text" class="col-form-label">Mensagem:</label>
-                    <textarea class="form-control" id="message-text"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="titulo">Início da Campanha</label>
-                    <input type="date" name="titulo">
-                </div>
-                <div class="form-group">
-                    <label for="titulo">Término da Campanha</label>
-                    <input type="date" name="titulo">
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">Inserir Imagem</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-primary">Enviar</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 
 
 <!-- Modal influencer -->

@@ -46,7 +46,7 @@ class CampanhaController extends Controller
 
     }
 
-    
+
     public function exibindoInfluencers () {
         $categorias = Categoria::orderBy('categoria', 'ASC')->get();
 

@@ -15,6 +15,7 @@ class ChaveEstrangeiraCampanha extends Migration
     {
         Schema::table('campanha', function (Blueprint $table){
             $table->foreign('id_categoria')->references('id')->on('categorias');
+
         });
     }
 

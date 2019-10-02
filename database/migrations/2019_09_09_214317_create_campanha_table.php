@@ -19,6 +19,8 @@ class CreateCampanhaTable extends Migration
             $table->string('descricao');
             $table->string('imagem');
             $table->unsignedBigInteger('id_categoria');
+            $table->unsignedBigInteger('id_marca')->nullable();
+            $table->unsignedBigInteger('id_influencers')->nullable();
             $table->date('inicio');
             $table->date('fim');
             $table->timestamps();
