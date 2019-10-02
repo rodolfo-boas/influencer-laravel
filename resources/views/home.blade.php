@@ -167,6 +167,7 @@
                     <form method="POST" action="/campanha/adicionar" enctype="multipart/form-data">
                         @csrf
                         {{method_field('post')}}
+                        <input type="hidden" name="id_marca" value ='{{ Auth::user()->id }}'>
                         <div class="form-group campanha-content">
                             <label for="titulo">Título da Campanha</label>
                             <input type="text" name="titulo" class="form-control" id="titulo">

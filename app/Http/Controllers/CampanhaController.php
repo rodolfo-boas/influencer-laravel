@@ -14,7 +14,9 @@ class CampanhaController extends Controller
             "descricao" => "required|max:200",
             "categoria" => "required",
             "inicio" => "required",
-            "fim" => "required"
+            "fim" => "required",
+            "id_marca" => "required"
+
         ]);
 
         $arquivo = $request->file('imagem');
@@ -37,7 +39,8 @@ class CampanhaController extends Controller
             "id_categoria" => $request->input('categoria'),
             "inicio" => $request->input('inicio'),
             "fim" => $request->input('fim'),
-            "imagem"=>$caminhoRelativo
+            "imagem"=>$caminhoRelativo,
+            "id_marca" => $request->input('id_marca')
         ]);
 
         $campanha->save();
