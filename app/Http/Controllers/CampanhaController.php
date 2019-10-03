@@ -63,5 +63,59 @@ class CampanhaController extends Controller
         return view('adicionandoCampanha')->with(['categorias' => $categorias]);
     }
 
+    
+    public function alterandoCampanha(Request $request, $id){
+        $campanha = Campanha::find($id);
 
+        $request->validate([
+            "titulo" => "required|max:50",
+            "descricao" => "required|max:200",
+            "categoria" => "required",
+            "inicio" => "required",
+            "fim" => "required",
+            "id_marca" => "required"
+        ]);
+
+        $arquivo = $request->file('imagem');
+
+        if (!empty($arquivo)) {
+            // salvando imagem no projeto
+            $nomePasta = 'uploads';
+
+            $arquivo->storePublicly($nomePasta);
+
+            $caminhoAbsoluto = public_path()."/storage/$nomePasta";
+
+            $nomeArquivo = $arquivo->getClientOriginalName();
+
+            $caminhoRelativo = "storage/$nomePasta/$nomeArquivo";
+
+            // movendo imagem
+            $arquivo->move($caminhoAbsoluto, $nomeArquivo);
+        }
+
+        $campanha->titulo = $request->input('titulo');
+        $campanha->descricao = $request->input('descricao');
+        $campanha->id_categoria = $request->input('categoria');
+        $campanha->inicio = $request->input('inicio');
+        $campanha->fim = $request->input('fim');
+        if (!empty($arquivo)) {
+            $campanha->imagem = $campanha->imagem;
+        }
+        $campanha->imagem = $caminhoRelativo;
+        $campanha->id_marca = $request->input('marca');
+
+        $campanha->save();
+
+        return redirect('/home');
+    }
+
+    public function removendoCampanha($id){
+        $campanha = Campanha::find($id);
+
+        $campanha->delete();
+
+        return redirect('/home');
+    }
 }
+

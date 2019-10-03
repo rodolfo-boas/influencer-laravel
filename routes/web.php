@@ -15,27 +15,27 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function(){
+Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/contato', function(){
+Route::get('/contato', function () {
     return view('contato');
 });
 
-route::get('/influenciadores', function(){
+route::get('/influenciadores', function () {
     return view('influenciadores');
 });
 
-Route::get('/marcas', function(){
+Route::get('/marcas', function () {
     return view('marcas');
 });
 
-Route::get('/cadastro/marca', function(){
+Route::get('/cadastro/marca', function () {
     return view('cadastroMarca');
 });
 
-Route::get('/cadastro/influencer', function(){
+Route::get('/cadastro/influencer', function () {
     return view('cadastroInfluencer');
 });
 
@@ -43,10 +43,16 @@ Route::get('/cadastro/influencer', function(){
 Route::get('/campanha/adicionar', 'CampanhaController@adicionandoCampanha')->name('campanha-adicionar');
 Route::post('/campanha/adicionar', 'CampanhaController@salvandoCampanha');
 
+// Modificando campanha
+Route::get('/campanha/modificar/{id}', 'CampanhaController@editandoCampanha');
+Route::put('/campanha/modificar/{id}', 'CampanhaController@alterandoCampanha');
+
+// Excluindo campanha
+Route::delete('/campanha/remover/{id}', 'CampanhaController@removendoCampanha');
 
 Auth::routes();
 
 // Rotas que apenas usuários logados acessam
-Route::middleware(['auth'])->group(function (){
+Route::middleware(['auth'])->group(function () {
     Route::get('/home', 'HomeController@index')->name('home');
 });

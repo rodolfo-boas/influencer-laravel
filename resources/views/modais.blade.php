@@ -37,7 +37,8 @@
                                 <h4 class="text-center">Cadastro influencer</h4>
                                 <p class="text-center">Se não possui conta, clique no botão abaixo</p>
                                 <div class="cadastro-button d-flex justify-content-center">
-                                    <a class="btn btn-lg btn-influencer" href="cadastro/influencer">quero me cadastrar</a>
+                                    <a class="btn btn-lg btn-influencer" href="cadastro/influencer">quero me
+                                        cadastrar</a>
                                 </div>
                             </div>
                         </div>
@@ -198,4 +199,32 @@
         </div>
     </div>
 </div>
+
+
+{{-- <!-- Modal influencer -->
+
+<div class="modal fade modalInfo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content modal-influencer">
+                <section class="d-flex flex-row align-items-center justify-content-center">
+                    <div class="col-6">
+                        <img class="img-fluid" src="image/modelo1.jpg" alt="">
+                    </div>
+                    <div class="col-6">
+                        <span>Nome: </span>
+                        <hr>
+                        <span>Seguidores: </span>
+                        <hr>
+                        <span>Categoria: </span>
+                        <hr>
+                        <span>Área de atuação: </span>
+                        <hr>
+                        <span>Estado: </span>
+                        <hr>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div> --}}
+
 @endsection
