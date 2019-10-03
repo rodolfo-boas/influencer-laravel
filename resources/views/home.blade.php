@@ -107,61 +107,61 @@
             </ul>
         </div>
 
-        <div class="col-10">
-            <div class="row d-flex justify-content-center">
-                <div class=" offset-8 col-4 produto-imagem text-center">
-                    <div class="flip-container">
-                        <div class="flipper">
-                            {{-- imagem --}}
-                            <div class="flip-card-back">
-                            </div>
+        <div class="col-10 ">
+            <div class="row d-flex justify-content-center top-banner">
+                <div class="col-10 ">
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="image/campanha1.png" width="109%" alt="1">
+                        </div>
+                        <div class="col-4">
+                            <img src="image/campanha2.png" width="109%" alt="2">
+                        </div>
+                        <div class="col-4">
+                            <img src="image/campanha3.png" width="109%" alt="3">
                         </div>
                     </div>
+                </div>
+                <div class="col-2 produto-imagem text-center">
                     <button class="mb-5 button-content" type="button" data-toggle="modal" data-target=".modalInfo">Criar
                         campanha</button>
                 </div>
             </div>
 
 
-            <div class="row">
+            <div class="row card-area-background">
                 <div class="col-12">
                     @foreach ($campanhas as $campanha)
                     @if($campanha->id_marca == Auth::user()->id)
-                    <div class="card mb-3" style="max-width: 900px;">
+                    <div class="card mb-3">
                         <div class="row no-gutters">
-                            <div class="col-md-5">
+                            <div class="col-4">
                                 <img class="imagem" src="{{url($campanha->imagem)}}" alt="">
                             </div>
-                           
-                            <div class="col-md-7">
+
+                            <div class="col-md-8">
                                 <div class="card-body">
-                                <?php 
-                                    $idCampanha = $campanha->id; 
-                                ?>  
-                                    <td scope="row">{{$campanha->titulo}}</td>
-                                    <p class="card-text">
-                                        <td scope="row">{{$campanha->descricao}}</td>
-                                    </p>
-                                    <div class="d-flex flex-column">
-                                        <div class="flex-column">
-                                            <p>categoria:
-                                                <td scope="row">{{$campanha->categoria->categoria}}</td>
-                                            </p>
+                                    <?php
+                                    $idCampanha = $campanha->id;
+                                ?>
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">{{$campanha->titulo}}</h5>
+                                        <p class="card-text text-center">{{$campanha->descricao}}</p>
+                                        <div class="d-flex flex-row justify-content-center">
+                                            <div class="flex-column mr-5">
+                                                <p class="card-text">Data de Inicio</small></p>
+                                                <p class="data"> {{date('d-m-Y', strtotime($campanha->inicio))}} </p>
+                                            </div>
+                                            <div class="flex-column">
+                                                <p class="card-text"></small> Data de término</p>
+                                                <p class="data">{{date('d-m-Y', strtotime($campanha->fim))}} </p>
+                                            </div>
                                         </div>
-                                        <br>
-                                        <br>
-                                        <div class="flex-column mr-5">
-                                            <p class="card-text"> Data inicial:
-                                                <td scope="row">{{date('d-m-Y', strtotime($campanha->inicio))}}</td>
-                                            </p>
+                                        <div class="d-flex justify-content-center mt-3">
+                                                <button class="card-button button-content" data-toggle="modal"
+                                                data-target=".modalEditarCampanha">Participar da Campanha</button>
                                         </div>
-                                        <div class="flex-column">
-                                            <p class="card-text"> Data final:
-                                                <td scope="row">{{date('d-m-Y', strtotime($campanha->fim))}}</td>
-                                            </p>
-                                        </div>
-                                        <button class="mb-5 button-content" type="button" data-toggle="modal" data-target=".modalEditarCampanha">Editar 
-                                                campanha</button>
+
                                     </div>
                                 </div>
                             </div>
@@ -178,130 +178,133 @@
 <!-- Modal marca -->
 
 <div class=" modal fade modalInfo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content modal-campanha">
-                <section class="d-flex flex-row align-items-center justify-content-center">
-                    <div class="col-6">
-                        <p>Criar Campanha</p>
-                        <img class="img-fluid" src="image/campanha.jpg" alt="">
-                    </div>
-                    <div class="col-6">
-                        <form method="POST" action="/campanha/adicionar" enctype="multipart/form-data">
-                            @csrf
-                            {{method_field('post')}}
-                            <input type="hidden" name="id_marca" value='{{ Auth::user()->id }}'>
-                            <div class="form-group campanha-content campanha-top">
-                                <label for="titulo">Título da Campanha</label>
-                                <input type="text" name="titulo" class="form-control" id="titulo">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content modal-campanha">
+            <section class="d-flex flex-row align-items-center justify-content-center">
+                <div class="col-6">
+                    <p>Criar Campanha</p>
+                    <img class="img-fluid" src="image/campanha.jpg" alt="">
+                </div>
+                <div class="col-6">
+                    <form method="POST" action="/campanha/adicionar" enctype="multipart/form-data">
+                        @csrf
+                        {{method_field('post')}}
+                        <input type="hidden" name="id_marca" value='{{ Auth::user()->id }}'>
+                        <div class="form-group campanha-content campanha-top">
+                            <label for="titulo">Título da Campanha</label>
+                            <input type="text" name="titulo" class="form-control" id="titulo">
+                        </div>
+
+                        <div class="form-group campanha-content">
+                            <label for="descricao">descricao</label>
+                            <input type="text" name="descricao" class="form-control" id="descricao">
+                        </div>
+
+                        <div class="form-group campanha-content">
+                            <label for="imagem">Imagem</label>
+                            <input type="file" name="imagem" class="form-control" id="imagem">
+                        </div>
+
+                        <div class="form-group campanha-content">
+                            <label for="categoria">categoria</label>
+                            <select name="categoria" class="form-control" id="categoria">
+                                <option value="">Selecione a categoria</option>
+                                @foreach ($categorias as $categoria)
+                                <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="d-flex flex-column">
+                            <div class="form-group campanha-content flex-row">
+                                <label for="inicio"> Data de Inicio</label>
+                                <input type="date" name="inicio" class="form-control col-10" id="inicio">
                             </div>
-    
-                            <div class="form-group campanha-content">
-                                <label for="descricao">descricao</label>
-                                <input type="text" name="descricao" class="form-control" id="descricao">
+
+                            <div class="form-group campanha-content flex-row">
+                                <label for="fim"> Data de fim</label>
+                                <input type="date" name="fim" class="form-control col-10" id="fim">
                             </div>
-    
-                            <div class="form-group campanha-content">
-                                <label for="imagem">Imagem</label>
-                                <input type="file" name="imagem" class="form-control" id="imagem">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
                             </div>
-    
-                            <div class="form-group campanha-content">
-                                <label for="categoria">categoria</label>
-                                <select name="categoria" class="form-control" id="categoria">
-                                    <option value="">Selecione a categoria</option>
-                                    @foreach ($categorias as $categoria)
-                                    <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-    
-                            <div class="d-flex flex-column">
-                                <div class="form-group campanha-content flex-row">
-                                    <label for="inicio"> Data de Inicio</label>
-                                    <input type="date" name="inicio" class="form-control col-10" id="inicio">
-                                </div>
-    
-                                <div class="form-group campanha-content flex-row">
-                                    <label for="fim"> Data de fim</label>
-                                    <input type="date" name="fim" class="form-control col-10" id="fim">
-                                </div>
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <button type="submit" class="btn btn-primary">Enviar</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </section>
-            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
         </div>
     </div>
-    
-    
-    <!-- Modal marca -->
-    
-    <div class=" modal fade modalEditarCampanha" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content modal-campanha">
-                <section class="d-flex flex-row align-items-center justify-content-center">
-                    <div class="col-6">
-                        <p>Alterar campanha</p>
-                        <img class="img-fluid" src="image/campanha.jpg" alt="">
-                    </div>
-                    <div class="col-6">
-                        <form method="POST" action="/campanha/modificar/{{$idCampanha}}"
-                            enctype="multipart/form-data">
-                            @csrf
-                            {{ method_field('PUT') }}
-                            
-                            {{-- <input type="hidden" name="id_marca" value='{{ Auth::user()->id }}'> --}}
-                            <div class="form-group campanha-content campanha-top">
-                                <label for="titulo">Título da Campanha</label>
-                                <input type="text" name="titulo" value="{{$campanha->titulo}}" class="form-control" id="titulo">
+</div>
+
+
+<!-- Modal marca -->
+
+<div class=" modal fade modalEditarCampanha" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content modal-campanha">
+            <section class="d-flex flex-row align-items-center justify-content-center">
+                <div class="col-6">
+                    <p>Alterar campanha</p>
+                    <img class="img-fluid" src="image/campanha.jpg" alt="">
+                </div>
+                <div class="col-6">
+                    <form method="POST" action="/campanha/modificar/{{$idCampanha}}" enctype="multipart/form-data">
+                        @csrf
+                        {{ method_field('PUT') }}
+
+                        {{-- <input type="hidden" name="id_marca" value='{{ Auth::user()->id }}'> --}}
+                        <div class="form-group campanha-content campanha-top">
+                            <label for="titulo">Título da Campanha</label>
+                            <input type="text" name="titulo" value="{{$campanha->titulo}}" class="form-control"
+                                id="titulo">
+                        </div>
+
+                        <div class="form-group campanha-content">
+                            <label for="descricao">descricao</label>
+                            <input type="text" name="descricao" value="{{$campanha->descricao}}" class="form-control"
+                                id="descricao">
+                        </div>
+
+                        <div class="form-group campanha-content">
+                            <label for="imagem">Imagem</label>
+                            <input type="file" name="imagem" class="form-control" id="imagem">
+                        </div>
+
+                        <div class="form-group campanha-content">
+                            <label for="categoria">categoria</label>
+                            <select name="categoria" class="form-control" id="categoria">
+                                <option value="{{$campanha->id_categoria}}">{{$categoria->categoria}}</option>
+                                @foreach ($categorias as $categoria)
+                                <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="d-flex flex-column">
+                            <div class="form-group campanha-content flex-row">
+                                <label for="inicio"> Data de Inicio</label>
+                                <input type="date" value="{{$campanha->inicio}}" name="inicio"
+                                    class="form-control col-10" id="inicio">
                             </div>
-    
-                            <div class="form-group campanha-content">
-                                <label for="descricao">descricao</label>
-                                <input type="text" name="descricao" value="{{$campanha->descricao}}" class="form-control" id="descricao">
+
+                            <div class="form-group campanha-content flex-row">
+                                <label for="fim"> Data de fim</label>
+                                <input type="date" value="{{$campanha->fim}}" name="fim" class="form-control col-10"
+                                    id="fim">
                             </div>
-    
-                            <div class="form-group campanha-content">
-                                <label for="imagem">Imagem</label>
-                                <input type="file" name="imagem"  class="form-control" id="imagem">
+                            <div class="form-group">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                <button type="submit" class="btn btn-primary">Enviar</button>
                             </div>
-    
-                            <div class="form-group campanha-content">
-                                <label for="categoria">categoria</label>
-                                <select name="categoria" class="form-control" id="categoria">
-                                    <option value="{{$campanha->id_categoria}}">{{$categoria->categoria}}</option>
-                                    @foreach ($categorias as $categoria)
-                                    <option value="{{$categoria->id}}">{{$categoria->categoria}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-    
-                            <div class="d-flex flex-column">
-                                <div class="form-group campanha-content flex-row">
-                                    <label for="inicio"> Data de Inicio</label>
-                                    <input type="date" value="{{$campanha->inicio}}" name="inicio" class="form-control col-10" id="inicio">
-                                </div>
-    
-                                <div class="form-group campanha-content flex-row">
-                                    <label for="fim"> Data de fim</label>
-                                    <input type="date" value="{{$campanha->fim}}" name="fim" class="form-control col-10" id="fim">
-                                </div>
-                                <div class="form-group">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                    <button type="submit" class="btn btn-primary">Enviar</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </section>
-            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
         </div>
-    </div> 
+    </div>
+</div>
 @endif
 {{-- FIM DA MARCA --}}
 @endauth

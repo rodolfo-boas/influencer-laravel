@@ -124,13 +124,24 @@ nav ul li a.menuLogado  {
     font-weight: bold;
   }
 
+  .top-banner{
+      background-color: rgba(223, 217, 217, 0.363);
+  }
+
   .button-content{
     border-radius: 50px;
     border: none;
-    font-size: 0.8em;
+    font-size: 0.80em;
     background-color: purple;
     color: white;
-    padding: 8px;
+    padding: 15px 17px;
+    margin-top: 20px;
   }
 
-  /* Galeria Interna Fim */
+  .card-body{
+    background-color: rgba(238, 222, 238, 0.63);
+  }
+
+  .card-area-background{
+    background-color: rgba(223, 217, 217, 0.363);
+  }
