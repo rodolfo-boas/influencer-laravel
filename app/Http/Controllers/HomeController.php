@@ -18,7 +18,7 @@ class homeController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +26,9 @@ class homeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $categorias = Categoria::all();
+        $campanhas = Campanha::orderBy('id', 'ASC')->get();
+        return view('home')->with(['categorias' => $categorias, 'campanhas'=> $campanhas]);
     }
 
     /**
@@ -50,7 +52,7 @@ class homeController extends Controller
         $request->validate([
             "titulo" => "required|max:50",
             "descricao" => "required|max:200",
-            // "categoria" => "required",
+            "categoria" => "required",
             "inicio" => "required",
             "fim" => "required",
             "id_marca" => "required"
@@ -74,7 +76,7 @@ class homeController extends Controller
         $campanha = Campanha::create([
             "titulo" => $request->input('titulo'),
             "descricao" => $request->input('descricao'),
-            // "id_categoria" => $request->input('categoria'),
+            "id_categoria" => $request->input('categoria'),
             "inicio" => $request->input('inicio'),
             "fim" => $request->input('fim'),
             "imagem"=>$caminhoRelativo,
@@ -83,7 +85,7 @@ class homeController extends Controller
 
         $campanha->save();
 
-        return redirect('/home');
+        return redirect('/home')->with('success', 'Campanha criada com sucesso!');
     }
 
     /**
@@ -105,7 +107,7 @@ class homeController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -117,7 +119,53 @@ class homeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $campanha = Campanha::find($id);
+
+        $request->validate([
+            "titulo" => "required|max:50",
+            "descricao" => "required|max:200",
+            "categoria" => "required",
+            "inicio" => "required",
+            "fim" => "required",
+            "id_marca" => "required"
+        ]);
+
+
+        $arquivo = $request->file('imagem');
+
+        if (!empty($arquivo)) {
+            // salvando imagem no projeto
+            $nomePasta = 'uploads';
+
+            $arquivo->storePublicly($nomePasta);
+
+
+            $caminhoAbsoluto = public_path()."/storage/$nomePasta";
+
+            $nomeArquivo = $arquivo->getClientOriginalName();
+
+            $caminhoRelativo = "storage/$nomePasta/$nomeArquivo";
+
+            // movendo imagem
+            $arquivo->move($caminhoAbsoluto, $nomeArquivo);
+        }
+
+        $campanha->titulo = $request->input('titulo');
+        $campanha->descricao = $request->input('descricao');
+        $campanha->fim = $request->input('fim');
+
+        $campanha->imagem = $caminhoRelativo;
+
+        $campanha->id_categoria = $request->input('categoria');
+        $campanha->inicio = $request->input('inicio');
+
+        $campanha->id_marca = $request->input('id_marca');
+
+
+
+        $campanha->save();
+
+        return redirect('/home')->with('success', 'Campanha alterada com sucesso!');
     }
 
     /**

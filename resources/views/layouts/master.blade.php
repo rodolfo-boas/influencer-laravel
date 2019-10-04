@@ -12,6 +12,9 @@
     <script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+
+<script defer src="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"></script>
+<script defer src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script defer src="https://kit.fontawesome.com/30ad546f67.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
@@ -74,7 +77,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navInterna" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <section class="collapse navbar-collapse col-md-8" id="navInterna">
         <ul class="navbar-nav text-center">
             <li><a class="menuLogado" href="">Mensagens</a></li>
@@ -102,7 +105,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navInterna" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        
+
         <section class="collapse navbar-collapse col-md-8" id="navInterna">
         <ul class="navbar-nav text-center">
             <li><a class="menuLogado" href="">Mensagens</i></a></li>
