@@ -394,8 +394,14 @@ article div h4 {
 
 /* Modal Influencer Início */
 
-.modal-campanha {
+.modal-criar-campanha {
   height: 600px;
+}
+.modal-editar-campanha {
+  height: 600px;
+}
+.modal-excluir-campanha {
+  height: 350px;
 }
 
 /* ================================================ Review Fim ======================================= */

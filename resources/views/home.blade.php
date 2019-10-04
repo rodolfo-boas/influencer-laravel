@@ -167,7 +167,8 @@
                                                 data-toggle="modal"
                                                 data-target="#editModal{{$campanha->id}}">Editar</button>
                                             <button class="mb-3 mt-3 button-content-marca" type="button"
-                                                data-toggle="modal" data-target=".modalExcluirCampanha">Excluir</button>
+                                                data-toggle="modal" data-target="#deleteModal{{$campanha->id}}
+                                                ">Excluir</button>
                                         </div>
                                     </div>
                                 </div>
@@ -179,7 +180,7 @@
                     <div class=" modal fade" id="editModal{{$campanha->id}}" tabindex="-1" role="dialog"
                         aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
-                            <div class="modal-content modal-campanha">
+                            <div class="modal-content modal-editar-campanha">
                                 <section class="d-flex flex-row align-items-center justify-content-center">
                                     <div class="col-6">
                                         <p>Alterar campanha</p>
@@ -192,7 +193,7 @@
                                             {{ csrf_field() }}
                                             {{method_field('PUT')}}
 
-                                            <input type="hidden" value="{{$campanha->id}}" name="campanhaId">
+                                            <input type="hidden" value="{{$campanha->imagem}}" name="campanhaImagem">
                                             <div class="form-group campanha-content campanha-top">
                                                 <label for="titulo">Título da Campanha</label>
                                                 <input type="text" name="titulo" value="{{$campanha->titulo}}"
@@ -224,6 +225,8 @@
 
                                             <div class="d-flex flex-column">
                                                 <div class="form-group campanha-content flex-row">
+                                                    <input type="hidden" value="{{$campanha->inicio}}"
+                                                        name="campanhaInicio">
                                                     <label for="inicio"> Data de inicio atual:
                                                         {{date('d-m-Y', strtotime($campanha->inicio))}}</label>
                                                     <input type="date" data-target="{{$campanha->inicio}}"
@@ -232,17 +235,17 @@
                                                 </div>
 
                                                 <div class="form-group campanha-content flex-row">
+                                                    <input type="hidden" value="{{$campanha->fim}}" name="campanhaFim">
                                                     <label for="fim"> Data de fim atual:
                                                         {{date('d-m-Y', strtotime($campanha->fim))}}</label>
                                                     <input type="date" value="{{$campanha->fim}}" name="fim"
                                                         class="form-control col-10" id="fim">
                                                 </div>
                                                 <input type="hidden" name="id_marca" value='{{ Auth::user()->id }}'>
-
                                                 <div class="form-group">
                                                     <button type="button" class="btn btn-secondary"
                                                         data-dismiss="modal">Fechar</button>
-                                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                                    <button type="submit" class="btn btn-primary">Alterar</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -252,6 +255,40 @@
                         </div>
                     </div>
 
+                    <div class=" modal fade" id="deleteModal{{$campanha->id}}" tabindex="-1" role="dialog"
+                        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content modal-excluir-campanha">
+                                <section class="d-flex flex-row align-items-center justify-content-center">
+                                    <div class="col-6">
+                                        <p>Excluir campanha</p>
+                                        <img class="img-fluid" src="{{url($campanha->imagem)}}" alt="">
+                                    </div>
+                                    <div class="col-6">
+                                        <form method="POST" action="/home/{{$campanha->id}}"
+                                            enctype="multipart/form-data" id="deleteForm">
+
+                                            {{ csrf_field() }}
+                                            {{method_field('DELETE')}}
+                                            <div class="form-group">
+                                                <p>
+                                                    Deseja realmente deletar a campanha:
+                                                </p>
+                                                <p>{{$campanha->titulo}}?</p>
+                                            </div>
+                                            <input type="hidden" value="DELETE" name="_method">
+
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Fechar</button>
+                                                <button type="submit" class="btn btn-primary">Excluir</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
                     @endif
                     @endforeach
                 </div>
@@ -265,7 +302,7 @@
 
 <div class=" modal fade modalInfo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
-        <div class="modal-content modal-campanha">
+        <div class="modal-content modal-criar-campanha">
             <section class="d-flex flex-row align-items-center justify-content-center">
                 <div class="col-6">
                     <p>Criar Campanha</p>
@@ -313,7 +350,7 @@
                             </div>
                             <div class="form-group">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                <button type="submit" class="btn btn-primary">Enviar</button>
+                                <button type="submit" class="btn btn-primary">Criar</button>
                             </div>
                         </div>
                     </form>

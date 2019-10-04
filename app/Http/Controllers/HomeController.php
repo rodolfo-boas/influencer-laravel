@@ -119,6 +119,8 @@ class homeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $campanhaImagem = $request->input('campanhaImagem');
+
         $campanha = Campanha::find($id);
 
         $request->validate([
@@ -139,7 +141,6 @@ class homeController extends Controller
 
             $arquivo->storePublicly($nomePasta);
 
-
             $caminhoAbsoluto = public_path()."/storage/$nomePasta";
 
             $nomeArquivo = $arquivo->getClientOriginalName();
@@ -148,19 +149,22 @@ class homeController extends Controller
 
             // movendo imagem
             $arquivo->move($caminhoAbsoluto, $nomeArquivo);
+        } else {
+            $caminhoRelativo = $campanhaImagem;
         }
 
         $campanha->titulo = $request->input('titulo');
         $campanha->descricao = $request->input('descricao');
-        $campanha->fim = $request->input('fim');
+
+
 
         $campanha->imagem = $caminhoRelativo;
 
         $campanha->id_categoria = $request->input('categoria');
-        $campanha->inicio = $request->input('inicio');
 
         $campanha->id_marca = $request->input('id_marca');
-
+        $campanha->inicio = $request->input('inicio');
+        $campanha->fim = $request->input('fim');
 
 
         $campanha->save();
@@ -176,6 +180,10 @@ class homeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $campanha = Campanha::find($id);
+        $campanha->delete();
+
+        return redirect('/home')->with('success', 'Campanha excluida com sucesso!');
+
     }
 }
