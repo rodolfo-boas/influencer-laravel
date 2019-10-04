@@ -47,6 +47,10 @@ Route::post('/campanha/adicionar', 'CampanhaController@salvandoCampanha');
 Route::get('/campanha/modificar/{id}', 'CampanhaController@editandoCampanha');
 Route::put('/campanha/modificar/{id}', 'CampanhaController@alterandoCampanha');
 
+    // Modificando Categoria
+    Route::get('/categorias/modificar/{id}', 'CategoriaController@modificandoCategoria');
+    Route::put('/categorias/modificar/{id}', 'CategoriaController@alterandoCategoria');
+
 // Excluindo campanha
 Route::delete('/campanha/remover/{id}', 'CampanhaController@removendoCampanha');
 

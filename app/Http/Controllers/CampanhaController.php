@@ -64,8 +64,21 @@ class CampanhaController extends Controller
     }
 
     
-    public function alterandoCampanha(Request $request, $id){
+    public function modificandoCampanha($id){
         $campanha = Campanha::find($id);
+
+        $categorias = Categoria::orderBy('categoria', 'ASC')->get();
+
+        return view('adicionandoCampanha')->with(
+            ["campanha" => $campanha, "categoria" => $categorias]
+        );
+    }
+
+
+    public function alterandoCampanha(Request $request, $id){
+        $campanhaId = $request->input('campanhaId');
+        $campanha = Campanha::find($campanhaId);
+
 
         $request->validate([
             "titulo" => "required|max:50",
@@ -76,39 +89,49 @@ class CampanhaController extends Controller
             "id_marca" => "required"
         ]);
 
-        $arquivo = $request->file('imagem');
 
+        $arquivo = $request->file('imagem');
+    
         if (!empty($arquivo)) {
             // salvando imagem no projeto
             $nomePasta = 'uploads';
-
+    
             $arquivo->storePublicly($nomePasta);
-
+    
             $caminhoAbsoluto = public_path()."/storage/$nomePasta";
-
+    
             $nomeArquivo = $arquivo->getClientOriginalName();
-
+    
             $caminhoRelativo = "storage/$nomePasta/$nomeArquivo";
-
+    
             // movendo imagem
             $arquivo->move($caminhoAbsoluto, $nomeArquivo);
         }
-
+    
         $campanha->titulo = $request->input('titulo');
         $campanha->descricao = $request->input('descricao');
-        $campanha->id_categoria = $request->input('categoria');
-        $campanha->inicio = $request->input('inicio');
         $campanha->fim = $request->input('fim');
         if (!empty($arquivo)) {
             $campanha->imagem = $campanha->imagem;
         }
         $campanha->imagem = $caminhoRelativo;
-        $campanha->id_marca = $request->input('marca');
 
+        $campanha->id_categoria = $request->input('categoria');
+        $campanha->inicio = $request->input('inicio');
+    
+        $campanha->id_marca = $request->input('id_marca');
+
+
+    
         $campanha->save();
-
+    
         return redirect('/home');
     }
+
+
+        
+
+    
 
     public function removendoCampanha($id){
         $campanha = Campanha::find($id);
