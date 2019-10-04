@@ -53,29 +53,26 @@ nav ul li a.menuLogado  {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: left;
-  background-color: rgba(223, 217, 217, 0.363);
+  background-color:purple;
   padding: 20px;
+  min-height: 600px;
 }
 
-.filtro-content ul{
+.filtro-content p{
+  font-size: 1.2em;
+  text-align: left;
+  color: white;
+}
+
+.filtro-content a{
+  color: white;
   font-size: 1em;
-  text-align: left;
-  color: purple;
-}
-
-.filtro-content ul li{
-  list-style: none;
-  text-align: left;
-}
-
-.filtro-content ul li a{
-  color: black;
-  font-size: 0.8em;
   text-decoration: none;
+  text-transform: capitalize;
 }
 
-.filtro-content ul li a:hover {
-  color: purple;
+.filtro-content a:hover {
+  color: yellow;
   font-weight: bold;
 }
 
@@ -127,10 +124,49 @@ nav ul li a.menuLogado  {
   .button-content{
     border-radius: 50px;
     border: none;
-    font-size: 0.8em;
+    font-size: 1.2em;
     background-color: purple;
     color: white;
-    padding: 8px;
+    padding: 15px 30px;
+    bottom: -107px;
+    right: -56px;
+  }
+
+  .button-content-marca{
+    border-radius: 50px;
+    border: none;
+    background-color: purple;
+    color: white;
+    font-size: 0.8em;
+    padding: 3px 10px;
   }
 
   /* Galeria Interna Fim */
+
+  .borda-interna{
+    box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+  }
+
+  .card-button{
+    border-radius: 50px;
+    border: none;
+    background: purple;
+    color: white;
+    font-size: 0.8em;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+  .marca-interna{
+    font-size: 1.3em;
+  }
+
+  .banner-content{
+    background-image: url('../image/banner.jpg');
+    height: 270px;
+  }
+
+  .banner-content-influencer{
+    background-image: url('../image/banner2.jpg');
+    height: 300px;
+  }
